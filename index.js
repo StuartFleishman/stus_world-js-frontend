@@ -1,5 +1,5 @@
 const ul = document.getElementById('users')
-
+const form = document.getElementById('user-form')
 
 function getUsers() {
 fetch("http://127.0.0.1:3000/users")
