@@ -30,7 +30,7 @@ function handleFormSubmit(e) {
 
   fetch(usersURL, configObj)
   .then(resp => resp.json())
-  .then(renderUser)
+  .then(renderUser, form.reset())
 }
 
 function renderUsers(json) {
