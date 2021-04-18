@@ -36,15 +36,11 @@ function handleFormSubmit(e) {
 
 function renderUsers(json) {
   json.map(user => {
+    new User({name: user.name})
     renderUser(user)
   })
 }
 
-function renderUser(user) {
-  const li = document.createElement('li')
-  li.id = `user ${user.id}`
-  li.innerText = user.name
-  ul.appendChild(li)
-}
+
 
 getUsers()
