@@ -2,13 +2,22 @@ class User {
 
   static all = []
 
-  constructor({name}) {
+  constructor({id, name}) {
     this.name = name 
-
-    const li = document.createElement('li')
-    li.id = `user ${user.id}`
+    this.id = id
+    
+    this.element = document.createElement('li')
+    this.element.id = `user-${id}`
 
     User.all.push(this)
+  }
+
+  renderUser(li) {
+    this.element.innerHTML = `
+      <div user-id="${this.id}"> 
+      <strong class="name">${this.name}</strong>
+      </div> 
+    `
   }
 
 
