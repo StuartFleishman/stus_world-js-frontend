@@ -36,8 +36,8 @@ function handleFormSubmit(e) {
 
 function renderUsers(json) {
   json.map(user => {
-    new User({name: user.name})
-    renderUser(user)
+    const i = new User({name: user.name})
+    i.attachToDom()
   })
 }
 

@@ -5,7 +5,7 @@ class User {
   constructor({name}) {
     this.name = name 
 
-    
+    debugger 
     this.element = document.createElement('li')
 
 
@@ -23,7 +23,7 @@ class User {
   }
 
   attachToDom() {
-    ul.appendChild(li)
+    ul.appendChild(this.renderUser())
   }
 
 
