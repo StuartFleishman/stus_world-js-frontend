@@ -4,8 +4,6 @@ class User {
 
   constructor({name}) {
     this.name = name 
-
-    debugger 
     this.element = document.createElement('li')
 
 
