@@ -20,21 +20,23 @@
   height: 20px;
 }
 
-.pac-dot {
+.dot {
   background-color: green;   
   border: 5px solid white;
   box-sizing: border-box;
 }
 
 .wall {
-  background-color: blue;
+  background-color: blue;   
+  border: 5px solid white;
+  box-sizing: border-box;
 }
 
 
 
-.pac-man {
-  background-color: yellow;
-  border-radius: 10px;
+.piece {
+  background-color: red;
+  border-radius: 100px;
 }
 
 
