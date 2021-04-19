@@ -14,7 +14,6 @@ class CommentApi {
   }
   
   static createComment(e) {
-    debugger
     const commentData = {
       text: e.target.comment.value
     }
