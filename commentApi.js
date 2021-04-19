@@ -1,21 +1,22 @@
 class CommentApi {
 
-  static baseURL = "http://127.0.0.1:3000/comments"
+  static commentURL = "http://127.0.0.1:3000/comments"
 
   static getComments() {
-    fetch(this.baseURL)
+    fetch(this.commentURL)
     .then(response => response.json())
     .then(json => {
-      json.map(comment => {
-        const i = new Comment({text: comment.text})
-        i.addToDom()
+      json.forEach(comment => {
+        const t = new Comment({text: comment.text})
+        t.addToDom()
       })
     })
   }
   
   static createComment(e) {
+    debugger
     const commentData = {
-      name: e.target.comment.value
+      text: e.target.comment.value
     }
   
     const configObj = {
@@ -27,11 +28,11 @@ class CommentApi {
       body: JSON.stringify(commentData)
     }
   
-    fetch(this.baseURL, configObj)
+    fetch(this.commentURL, configObj)
     .then(resp => resp.json())
-    .then(comment => {
-      const i = new Comment({text: comment.text})
-      i.addToDom()
+    .then(json => {
+      const to = new Comment({text: json.text})
+      to.addToDom()
     })
   }
 

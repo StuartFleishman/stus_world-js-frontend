@@ -7,7 +7,7 @@ class UserApi {
     .then(response => response.json())
     .then(json => {
       json.map(user => {
-        const i = new User({name: user.name})
+        const i = new User({id: user.id, name: user.name})
         i.attachToDom()
       })
     })
@@ -30,7 +30,7 @@ class UserApi {
     fetch(this.baseURL, configObj)
     .then(resp => resp.json())
     .then(user => {
-      const i = new User({name: user.name})
+      const i = new User({id: user.id, name: user.name})
       i.attachToDom()
     })
   }

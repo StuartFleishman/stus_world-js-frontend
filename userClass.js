@@ -2,7 +2,8 @@ class User {
 
   static all = []
 
-  constructor({name}) {
+  constructor({id, name}) {
+    this.id = id
     this.name = name 
     this.element = document.createElement('li')
 
@@ -12,7 +13,7 @@ class User {
 
   renderUser() {
     this.element.innerHTML = `
-      <div> 
+      <div data-set=${this.id}> 
       <strong class="name">${this.name}</strong>
       </div> 
     `

@@ -9,12 +9,17 @@ class Comment {
   }
 
   render() {
-    this.element.innerText = this.text 
-    return this.text 
+    this.element.innerHTML = `
+      <div> 
+      <strong class="name">${this.text}</strong>
+      </div> 
+    `
+
+    return this.element
   }
 
   addToDom() {
-    comments.appendChild(this.render())
+    ulComments.appendChild(this.render())
   }
 
 
