@@ -15,7 +15,8 @@ class CommentApi {
   
   static createComment(e) {
     const commentData = {
-      text: e.target.comment.value
+      text: e.target.comment.value,
+      user_id: dropdown.value
     }
   
     const configObj = {
@@ -29,8 +30,8 @@ class CommentApi {
   
     fetch(this.commentURL, configObj)
     .then(resp => resp.json())
-    .then(json => {
-      const to = new Comment({text: json.text})
+    .then(json => { console.log(json)
+      const to = new Comment({text: json.text, userID: json.user_id})
       to.addToDom()
     })
   }

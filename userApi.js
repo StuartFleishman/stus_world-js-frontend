@@ -9,6 +9,7 @@ class UserApi {
       json.map(user => {
         const i = new User({id: user.id, name: user.name})
         i.attachToDom()
+        i.addToDropDown()
       })
     })
   }
@@ -32,6 +33,7 @@ class UserApi {
     .then(user => {
       const i = new User({id: user.id, name: user.name})
       i.attachToDom()
+      i.addToDropDown()
     })
   }
 

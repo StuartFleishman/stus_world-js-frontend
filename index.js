@@ -2,6 +2,9 @@ const ul = document.getElementById('users')
 const form = document.getElementById('user-form')
 const ulComments = document.getElementById('comments')
 const commentsForm = document.getElementById('comment-form')
+const dropdown = document.getElementById('user-dropdown')
+const userInput = document.getElementById("user-name")
+
 
 form.addEventListener('submit', handleFormSubmit)
 commentsForm.addEventListener('submit', handleCommentSubmit)

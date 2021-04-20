@@ -25,6 +25,13 @@ class User {
     ul.appendChild(this.renderUser())
   }
 
+  addToDropDown(){
+    const option = document.createElement('option')
+    option.value  = this.id 
+    option.innerText = this.name
+    dropdown.append(option)
+}
+
 
 }
 

@@ -77,22 +77,30 @@
       div.innerHTML = `
       <form>
       <label for="user">What is the capital of New Jersey?</label>
-      <input type=text>
+      <input type=text id="answer">
       <input type="Submit" value="Submit">
       </form>
     `
     }
     else if (squares[gamePiece] === squares[5]) {
-      const h2 = document.createElement('h2')
       const div = document.getElementById('test')
-      h2.innerText = "What is the capital of New Jersey?"
-      div.appendChild(h2)
+      div.innerHTML = `
+      <form>
+      <label for="user">What is the capital of New Jersey?</label>
+      <input type=text id="answer">
+      <input type="Submit" value="Submit">
+      </form>
+    `      
     }
     else if (squares[gamePiece] === squares[6]) {
-      const h2 = document.createElement('h2')
       const div = document.getElementById('test')
-      h2.innerText = "What is the capital of New Jersey?"
-      div.appendChild(h2)
+      div.innerHTML = `
+      <form>
+      <label for="user">What is the capital of New Jersey?</label>
+      <input type=text id="answer">
+      <input type="Submit" value="Submit">
+      </form>
+    `
     }
     else if (squares[gamePiece] === squares[7]) {
       const h2 = document.createElement('h2')
@@ -133,6 +141,15 @@
     
   }
 
+  // const i = document.getElementById('answer')
+  // const value = i.value 
+  // const upCase = value.toUpperCase()
+  //   if(upCase === "TRENTON") {
+  //     const h2 = document.createElement('h2')
+  //     h2.innerText = "CORRECT!"
+  //     div.appendChild(h2)
+  //   }
+
 
   const squares = []
 
@@ -158,49 +175,5 @@
 
    squares[gamePiece].classList.add('piece')
 
-  function movePiece(e) {
-    squares[gamePiece].classList.remove('piece')
-    switch(e.keyCode) {
-      case 37:
-        if(
-          gamePiece % width !== 0 &&
-          !squares[gamePiece -1].classList.contains('wall')
-          )
-          gamePiece -= 1
-        if (squares[gamePiece -1] === squares[363]) {
-          gamePiece = 391
-          const h2 = document.createElement('h2')
-          const div = document.getElementById('test')
-          h2.innerText = "What is the capital of New Jersey?"
-          div.appendChild(h2)
-        }
-        break
-      case 38:
-        if(
-          gamePiece- width >= 0 &&
-          !squares[gamePiece -width].classList.contains('wall')
-          ) 
-          gamePiece -= width
-        break
-      case 39:
-        if(
-          gamePiece% width < width - 1 &&
-          !squares[gamePiece +1].classList.contains('wall')
-        )
-        gamePiece += 1
-        if (squares[gamePiece+1] === squares[392]) {
-          gamePiece= 364
-        }
-        break
-      case 40:
-        if (
-          gamePiece+ width < width * width &&
-          !squares[gamePiece +width].classList.contains('wall')
-        )
-        gamePiece += width
-        break
-    }
-    squares[gamePiece].classList.add('piece')
-  }
-  document.addEventListener('keyup', movePiece)
+
 

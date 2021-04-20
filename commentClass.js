@@ -2,8 +2,9 @@ class Comment {
 
   static all = []
 
-  constructor({text}) {
+  constructor({text, user_id}) {
     this.text = text 
+    this.userId = user_id 
     this.element = document.createElement('li')
     Comment.all.push(this)
   }

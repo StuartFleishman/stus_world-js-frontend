@@ -50,3 +50,11 @@ div.dice {
   text-align: center;
   margin: 5px;
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
