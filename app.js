@@ -53,78 +53,43 @@
     squares[gamePiece].classList.add('piece')
 
     if (squares[gamePiece] === squares[2]) {
-      const div = document.getElementById('test')
-      div.innerHTML = `
-      <form>
-      <label for="user">What is the capital of New Jersey?</label>
-      <input type=text>
-      <input type="Submit" value="Submit">
-      </form>
-    `
+      const form = document.getElementById("jersey").className = "visible"
+      setTimeout(function(){form.className = "hidden"}, 2000)
+
+
     }
     else if (squares[gamePiece] === squares[3]) {
-      const div = document.getElementById('test')
-      div.innerHTML = `
-      <form>
-      <label for="user">What is the capital of New Jersey?</label>
-      <input type=text>
-      <input type="Submit" value="Submit">
-      </form>
-    `
+      const form = document.getElementById("jersey").className = "visible"
+      setTimeout(function(){form.className = "hidden"}, 2000)
+    
     }
     else if (squares[gamePiece] === squares[4]) {
-      const div = document.getElementById('test')
-      div.innerHTML = `
-      <form>
-      <label for="user">What is the capital of New Jersey?</label>
-      <input type=text id="answer">
-      <input type="Submit" value="Submit">
-      </form>
-    `
+      const form = document.getElementById("jersey").className = "visible"
+      setTimeout(function(){form.className = "hidden"}, 2000)
     }
     else if (squares[gamePiece] === squares[5]) {
-      const div = document.getElementById('test')
-      div.innerHTML = `
-      <form>
-      <label for="user">What is the capital of New Jersey?</label>
-      <input type=text id="answer">
-      <input type="Submit" value="Submit">
-      </form>
-    `      
+      const form = document.getElementById("jersey").className = "visible"
+      setTimeout(function(){form.className = "hidden"}, 2000)
     }
     else if (squares[gamePiece] === squares[6]) {
-      const div = document.getElementById('test')
-      div.innerHTML = `
-      <form>
-      <label for="user">What is the capital of New Jersey?</label>
-      <input type=text id="answer">
-      <input type="Submit" value="Submit">
-      </form>
-    `
+      const form = document.getElementById("jersey").className = "visible"
+      setTimeout(function(){form.className = "hidden"}, 2000)
     }
     else if (squares[gamePiece] === squares[7]) {
-      const h2 = document.createElement('h2')
-      const div = document.getElementById('test')
-      h2.innerText = "What is the capital of New Jersey?"
-      div.appendChild(h2)
+      const form = document.getElementById("jersey").className = "visible"
+      setTimeout(function(){form.className = "hidden"}, 2000)
     }
     else if (squares[gamePiece] === squares[8]) {
-      const h2 = document.createElement('h2')
-      const div = document.getElementById('test')
-      h2.innerText = "What is the capital of New Jersey?"
-      div.appendChild(h2)
+      const form = document.getElementById("jersey").className = "visible"
+      setTimeout(function(){form.className = "hidden"}, 2000)
     }
     else if (squares[gamePiece] === squares[9]) {
-      const h2 = document.createElement('h2')
-      const div = document.getElementById('test')
-      h2.innerText = "What is the capital of New Jersey?"
-      div.appendChild(h2)
+      const form = document.getElementById("jersey").className = "visible"
+      setTimeout(function(){form.className = "hidden"}, 2000)
     }
     else if (squares[gamePiece] === squares[10]) {
-      const h2 = document.createElement('h2')
-      const div = document.getElementById('test')
-      h2.innerText = "What is the capital of New Jersey?"
-      div.appendChild(h2)
+      const form = document.getElementById("jersey").className = "visible"
+      setTimeout(function(){form.className = "hidden"}, 2000)
     }
     else if (squares[gamePiece] === squares[11]) {
       const h2 = document.createElement('h2')
