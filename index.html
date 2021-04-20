@@ -19,6 +19,10 @@
 
 
   <div id="test"></div>
+
+  <canvas id="gameScreen"></canvas>
+
+
   <form id="jersey" class="hidden">
     <label for="user">What is the capital of New Jersey?</label>
     <input type=text id="answer">
@@ -26,6 +30,7 @@
     </form>
 
     <h2 id="wrong" class="hidden">wrong answer!</h2>
+    <h2 id="right" class="hidden">right answer!</h2>
 
     <div class="grid"></div>
     <h3>Score:<span id="score">0</span></h3>
@@ -48,6 +53,7 @@
 
 </body>
 <script src="app.js" charset="utf-8"></script>
+<script src="game.js" charset="utf-8"></script>
 <script src="userClass.js" charset="utf-8" type="text/javascript"></script>
 <script src="commentClass.js" charset="utf-8" type="text/javascript"></script>
 <script src="commentApi.js" charset="utf-8" type="text/javascript"></script>

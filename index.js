@@ -8,6 +8,7 @@ const jerseyForm = document.getElementById('jersey')
 const jerseyAnswer = document.getElementById('answer')
 const score = document.getElementById('score')
 const wrong = document.getElementById('wrong')
+const right = document.getElementById('right')
 
 form.addEventListener('submit', handleFormSubmit)
 commentsForm.addEventListener('submit', handleCommentSubmit)
@@ -23,6 +24,7 @@ function jerseySubmit(e) {
 
 function checkAnswer(c) {
   if (c === "TRENTON") {
+    right.className = "visible"
     score.innerText += 1
   }
   else {
