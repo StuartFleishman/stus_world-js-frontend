@@ -14,7 +14,7 @@ class User {
   renderUser() {
     this.element.innerHTML = `
       <div data-set=${this.id}> 
-      <strong class="name">${this.name}</strong>
+      <strong class="name">${this.name}</strong><span>
       </div> 
     `
 
@@ -25,7 +25,7 @@ class User {
     ul.appendChild(this.renderUser())
   }
 
-  addToDropDown(){
+  addList(){
     const option = document.createElement('option')
     option.value  = this.id 
     option.innerText = this.name

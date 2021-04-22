@@ -1,6 +1,7 @@
 const ul = document.getElementById('users')
 const form = document.getElementById('user-form')
 const ulComments = document.getElementById('comments')
+const ulScores = document.getElementById('scores')
 const commentsForm = document.getElementById('comment-form')
 const dropdown = document.getElementById('user-dropdown')
 const userInput = document.getElementById("user-name")
@@ -9,10 +10,17 @@ const jerseyAnswer = document.getElementById('answer')
 const score = document.getElementById('score')
 const wrong = document.getElementById('wrong')
 const right = document.getElementById('right')
+const scoreForm = document.getElementById("score-form") 
 
 form.addEventListener('submit', handleFormSubmit)
+scoreForm.addEventListener('submit', handleScoreSubmit)
 commentsForm.addEventListener('submit', handleCommentSubmit)
 jerseyForm.addEventListener('submit', jerseySubmit)
+
+function handleScoreSubmit(e) {
+  e.preventDefault()
+  GameScoreApi.createUser(e)
+}
 
 function jerseySubmit(e) {
   e.preventDefault()
