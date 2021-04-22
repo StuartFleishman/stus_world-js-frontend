@@ -10,6 +10,7 @@ class UserApi {
         const i = new User({id: user.id, name: user.name, score: user.score})
         i.attachToDom()
         i.addList()
+        i.addSecondList()
       })
     })
   }
@@ -33,7 +34,8 @@ class UserApi {
     .then(user => {
       const i = new User({id: user.id, name: user.name, user: user.score})
       i.attachToDom()
-      i.addToDropDown()
+      i.addList()
+      i.addSecondList()
     })
   }
 

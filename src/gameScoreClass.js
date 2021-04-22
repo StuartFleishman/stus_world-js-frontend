@@ -23,7 +23,7 @@ class GameScore {
   }
 
   attachToDom() {
-    scoreForm.appendChild(this.renderUser())
+    ulScores.appendChild(this.renderUser())
   }
 
 

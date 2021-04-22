@@ -32,6 +32,13 @@ class User {
     dropdown.append(option)
 }
 
+addSecondList(){
+  const option = document.createElement('option')
+  option.value  = this.id 
+  option.innerText = this.name
+  secondDropdown.append(option)
+}
+
 
 }
 

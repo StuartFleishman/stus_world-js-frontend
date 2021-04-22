@@ -1,11 +1,11 @@
-class gameScoreApi {
+class GameScoreApi {
 
   static baseURL = "http://127.0.0.1:3000/game_scores"
 
   static createScore(e) {
-    debugger
     const scoreData = {
-      score: e.target.user.value
+      score: parseInt(score.innerText),
+      user_id: secondDropdown.value 
     }
   
     const configObj = {
@@ -14,15 +14,14 @@ class gameScoreApi {
         "Content-Type": "application/json",
         Accept: "application/json"
       },
-      body: JSON.stringify(userData)
+      body: JSON.stringify(scoreData)
     }
   
     fetch(this.baseURL, configObj)
     .then(resp => resp.json())
-    .then(user => {
-      const i = new User({id: user.id, name: user.name, user: user.score})
+    .then(score => { console.log(score)
+      const i = new GameScore({id: score.id, score: score.score, user_id: score.user_id})
       i.attachToDom()
-      i.addToDropDown()
     })
   }
 

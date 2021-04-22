@@ -2,12 +2,20 @@ const ul = document.getElementById('users')
 const form = document.getElementById('user-form')
 const ulComments = document.getElementById('comments')
 const ulScores = document.getElementById('scores')
+
+
 const commentsForm = document.getElementById('comment-form')
 const dropdown = document.getElementById('user-dropdown')
+const secondDropdown = document.getElementById('score-dropdown')
+
 const userInput = document.getElementById("user-name")
+
 const jerseyForm = document.getElementById('jersey')
+
 const jerseyAnswer = document.getElementById('answer')
+
 const score = document.getElementById('score')
+
 const wrong = document.getElementById('wrong')
 const right = document.getElementById('right')
 const scoreForm = document.getElementById("score-form") 
@@ -19,7 +27,7 @@ jerseyForm.addEventListener('submit', jerseySubmit)
 
 function handleScoreSubmit(e) {
   e.preventDefault()
-  GameScoreApi.createUser(e)
+  GameScoreApi.createScore(e)
 }
 
 function jerseySubmit(e) {
