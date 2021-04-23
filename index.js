@@ -60,6 +60,14 @@ function handleCommentSubmit(e) {
   form.reset()
 }
 
+const start_btn = document.querySelector(".start_btn button")
+
+start_btn.addEventListener('click', e => {
+  const yoyo = document.getElementById('hi')
+  yoyo.className = "visible"
+  start_btn.className = "hidden"
+   })
+
 
 UserApi.getUsers()
 CommentApi.getComments()

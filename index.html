@@ -1,27 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css"></link>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h1>Stu's World!</h1>
-  <ul id="users">Users</ul>
-  <ul id="comments">Comments</ul>
-  <ul id="scores">Scores</ul>
+   
+    <div class="start_btn"><button>Start</button></div>
 
-  <div id="die1" class="dice">0</div>
-  <div id="die2" class="dice">0</div>
-  <button onclick="rollDice()">Roll Dice</button>
-  <h2 id="status" style="clear:left;"></h2>
+
+ 
+
+
+  <form id="hi" class ="hidden" >
+          <div class="hidden">1. You will have only <span>15 seconds</span> per each question.</div>
+          <div class="info">2. Once you select your answer, it can't be undone.</div>
+          <div class="info">3. You can't select any option once time goes off.</div>
+          <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+          <div class="info">5. You'll get points on the basis of your correct answers.</div>
+          <button class="quit">Exit Quiz</button>
+          <button class="restart">Continue</button>
+  </form>
+
+
+
+
+
+
 
 
 
   <div id="test"></div>
-
-  <!-- <canvas id="gameScreen" width="800" height="600"></canvas> -->
 
 
   <form id="jersey" class="hidden">
@@ -36,22 +46,23 @@
     <div class="grid"></div>
 
 
-  <form id="user-form">
+  <form class="hidden" id="user-form">
     <label for="user">User Name:</label><br>
     <input type="text" id="user" name="name"><br>
     <input type="Submit" value="Submit">
   </form>
 
-  <form id="comment-form">
+  <form class="hidden" id="comment-form">
     <label for="user-dropdown">User:</label>
     <select name="user_id" id="user-dropdown">
     </select><br><br>
+    <label for="user-dropdown">Comment:</label>
     <input type="text" id="comment" name="text"><br>
     <input type="Submit" value="Submit">
   </form>
 
 
-  <form id="score-form">
+  <form class="hidden" id="score-form">
     <label for="score-dropdown">User:</label>
     <select name="user_id" id="score-dropdown">
     </select><br><br>
@@ -59,8 +70,13 @@
     <input type="Submit" value="Save">
   </form>
 
+  <ul class="hidden" id="users">Users</ul>
+  <ul id="comments">Comments</ul>
+  <ul id="scores">Scores</ul>
+
 
 </body>
+<script src="https://kit.fontawesome.com/1466d4028b.js"></script>
 <script src="src/app.js" charset="utf-8"></script>
 <script src="src/gameScoreApi.js" charset="utf-8"></script>
 <script src="src/gameScoreClass.js" charset="utf-8"></script>
