@@ -7,7 +7,7 @@
 
 
 const inputValue = document.getElementById('a')
-let score = document.querySelector(".score-count")
+let scoreCount = document.querySelector(".score-count")
 const answerArray = [{}]
 
 function getCategories(catNum){
@@ -84,7 +84,7 @@ const answerForm = document.getElementById('ans')
 answerForm.addEventListener('submit', e => {
   e.preventDefault()
   if (e.target.firstElementChild.value.toUpperCase() === answerArray[0].toUpperCase()) {
-    score.innerHTML += 1
+    scoreCount.innerHTML += 1
     const b = document.getElementById('cat')
     const say = b.firstElementChild
     say.innerText = ""

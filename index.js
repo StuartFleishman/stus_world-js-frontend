@@ -1,5 +1,5 @@
 const ul = document.getElementById('users')
-const form = document.getElementById('user-form')
+const userForm = document.getElementById('user-form')
 const ulComments = document.getElementById('comments')
 const ulScores = document.getElementById('scores')
 
@@ -20,7 +20,7 @@ const wrong = document.getElementById('wrong')
 const right = document.getElementById('right')
 const scoreForm = document.getElementById("score-form") 
 
-form.addEventListener('submit', handleFormSubmit)
+userForm.addEventListener('submit', handleFormSubmit)
 scoreForm.addEventListener('submit', handleScoreSubmit)
 commentsForm.addEventListener('submit', handleCommentSubmit)
 jerseyForm.addEventListener('submit', jerseySubmit)
@@ -62,11 +62,11 @@ function handleCommentSubmit(e) {
 
 const start_btn = document.querySelector(".start_btn button")
 
-start_btn.addEventListener('click', e => {
-  const yoyo = document.getElementById('hi')
-  yoyo.className = "visible"
-  start_btn.className = "hidden"
-   })
+// start_btn.addEventListener('click', e => {
+//   const yoyo = document.getElementById('hi')
+//   yoyo.className = "visible"
+//   start_btn.className = "hidden"
+//    })
 
 
 UserApi.getUsers()
