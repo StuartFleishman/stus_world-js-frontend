@@ -51,7 +51,7 @@ function checkAnswer(c) {
 function handleFormSubmit(e) {
   e.preventDefault()
   UserApi.createUser(e)
-  form.reset()
+  userForm.reset()
 }
 
 function handleCommentSubmit(e) {

@@ -6,8 +6,8 @@ class UserApi {
     fetch(this.baseURL)
     .then(response => response.json())
     .then(json => {
-      json.map(user => {
-        const i = new User({id: user.id, name: user.name, score: user.score})
+      json.data.map(user => {
+        const i = new User({id: user.id, name: user.attributes.name})
         i.attachToDom()
         i.addList()
         i.addSecondList()
@@ -32,7 +32,8 @@ class UserApi {
     fetch(this.baseURL, configObj)
     .then(resp => resp.json())
     .then(user => {
-      const i = new User({id: user.id, name: user.name, user: user.score})
+      const newUser = user.data
+      const i = new User({id: newUser.id, name: newUser.attributes.name})
       i.attachToDom()
       i.addList()
       i.addSecondList()
