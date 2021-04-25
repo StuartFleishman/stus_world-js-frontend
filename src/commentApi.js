@@ -6,8 +6,8 @@ class CommentApi {
     fetch(this.commentURL)
     .then(response => response.json())
     .then(json => {
-      json.forEach(comment => {
-        const t = new Comment({text: comment.text})
+      json.data.forEach(comment => {
+        const t = new Comment({text: comment.attributes.text})
         t.addToDom()
       })
     })
@@ -30,8 +30,9 @@ class CommentApi {
   
     fetch(this.commentURL, configObj)
     .then(resp => resp.json())
-    .then(json => { console.log(json)
-      const to = new Comment({text: json.text, userID: json.user_id})
+    .then(json => {
+      const newComment = json.data
+      const to = new Comment({text: newComment.attributes.text, userID: newComment.attributes.user_id})
       to.addToDom()
     })
   }

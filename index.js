@@ -57,7 +57,7 @@ function handleFormSubmit(e) {
 function handleCommentSubmit(e) {
   e.preventDefault()
   CommentApi.createComment(e)
-  form.reset()
+  commentsForm.reset()
 }
 
 const start_btn = document.querySelector(".start_btn button")
