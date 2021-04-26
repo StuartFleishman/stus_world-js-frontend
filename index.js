@@ -3,6 +3,8 @@ const userForm = document.getElementById('user-form')
 const ulComments = document.getElementById('comments')
 const ulScores = document.getElementById('scores')
 
+const reset = document.getElementById('reset')
+
 
 const commentsForm = document.getElementById('comment-form')
 const dropdown = document.getElementById('user-dropdown')
@@ -20,6 +22,16 @@ userForm.addEventListener('submit', handleFormSubmit)
 scoreForm.addEventListener('submit', handleScoreSubmit)
 commentsForm.addEventListener('submit', handleCommentSubmit)
 
+reset.addEventListener('click', handleReset)
+
+function handleReset(e) {
+  h1.firstElementChild.remove()
+  const yoko = document.getElementsByTagName('h4')
+  const john = Array.from(yoko) 
+  john[0].remove()
+  const moo = document.getElementById('hello')
+  moo.remove()
+}
 
 function handleScoreSubmit(e) {
   e.preventDefault()

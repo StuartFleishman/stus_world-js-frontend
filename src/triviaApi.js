@@ -3,6 +3,8 @@ let newData = {}
 
 const numForm = document.getElementById('number')
 
+const h1 = document.getElementById('cat')
+
 const inputValue = document.getElementById('a')
 let scoreCount = document.querySelector(".score-count")
 let answerForm = document.getElementById('hello')
@@ -23,7 +25,7 @@ function getCategories(catNum){
         }
       })
 
-  const h1 = document.getElementById('cat')
+  // const h1 = document.getElementById('cat')
   const p = document.createElement('p')
   const title = data.title
   p.innerText= title 
@@ -42,7 +44,7 @@ function addQuestion({question, id, answer}) {
   const clue = document.getElementById("to")
   let div = document.createElement('div');
   div.innerHTML =(`
-  <p> ${question}</p>
+  <h4> ${question}</h4>
   <form class="visible" id="hello" autocomplete="off">
   <label class="hidden">${answer}</label>
   <input id="a" name="user-answer" type="text" />
@@ -51,7 +53,7 @@ function addQuestion({question, id, answer}) {
   `)
 
 
-  div.classList.add("grid-item")
+  // div.classList.add("grid-item")
   answerArray.push(`${answer}}`)
    
   clue.appendChild(div)
