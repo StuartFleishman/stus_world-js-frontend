@@ -5,6 +5,7 @@
 //   constructor()
 // }
 
+let newData = {}
 
 const inputValue = document.getElementById('a')
 let scoreCount = document.querySelector(".score-count")
@@ -15,6 +16,7 @@ fetch(`https://jservice.io/api/category?id=${catNum}`)
 .then(resp => resp.json())
 .then(data => {
   const spliceData = data.clues.splice(0,5)
+  newData = {...spliceData}
   spliceData.map(category => {
     if (category.question === "[audio]") {
       addError()
@@ -45,18 +47,25 @@ function addQuestion({question, id, answer}) {
   let div = document.createElement('div');
   div.innerHTML =(`
   <p> ${question}</p>
-  <form class="visible" id="ans" autocomplete="off">
+  <form class="ans" id="${id}" autocomplete="off">
+  <label class="hidden">${answer}</label>
   <input id="a" name="user-answer" type="text" />
   <button type="submit">Answer</button>
   </form>
   `)
+
+  // let hi = document.getElementById(`${id}`)
+  // hi.addEventListener('submit', e => {
+  //   e.preventDefault()
+  //   debugger
+  // })
 
   // answerForm.classList.add("visible")
 
   div.classList.add("grid-item")
   const divAnswer = document.createElement('div')
   divAnswer.id = `${id}`
-  answerArray.push(`{id: ${id}, answer: ${answer}`)
+  answerArray.push(`{id: ${id}, answer: ${answer}}`)
   
 
 
@@ -67,37 +76,48 @@ function addQuestion({question, id, answer}) {
   clue.appendChild(div)
   clue.appendChild(divAnswer)
 
-  // answerForm.addEventListener('submit', e => {
-  //   e.preventDefault()
-  //   if (e.target.firstElementChild.value.toUpperCase() === answerArray[0].toUpperCase()) {
-  //     score.innerHTML += 1
-  //   }
-  //   else {
-  //     addWrong()
-  //   }
-  //   answerForm.reset()
-  // })
+  const q = document.getElementsByClassName('ans')
+  const me = Array.from(q)
 
-}
-}
-const answerForm = document.getElementById('ans')
-answerForm.addEventListener('submit', e => {
-  e.preventDefault()
-  if (e.target.firstElementChild.value.toUpperCase() === answerArray[0].toUpperCase()) {
-    scoreCount.innerHTML += 1
-    const b = document.getElementById('cat')
-    const say = b.firstElementChild
-    say.innerText = ""
-    const mo = document.getElementsByClassName('jo')
-    const hit = Array.from(mo)
-    const us = hit[0]
-    us.innerText = ""
-  }
-  else {
-    addWrong()
-  }
-  answerForm.reset()
+  me.forEach( e => {
+
+    e.addEventListener('submit', e => {
+    e.preventDefault()
+    const hidden = e.target.firstElementChild.innerHTML
+    const hiddenUp = hidden.toUpperCase()
+    const userValue = e.target.children[1].value
+    const userValueUp = userValue.toUpperCase()
+    if (hiddenUp === userValueUp) {
+      debugger 
+      let scoreCount = document.querySelector(".score-count")
+      return scoreCount.innerHTML += 1
+    }
+    else {
+      console.log('not working')
+    }
+    answerForm.reset()
+  })
 })
+}
+}
+// const answerForm = document.getElementById('ans')
+// answerForm.addEventListener('submit', e => {
+//   e.preventDefault()
+//   if (e.target.firstElementChild.value.toUpperCase() === answerArray[0].toUpperCase()) {
+//     scoreCount.innerHTML += 1
+//     const b = document.getElementById('cat')
+//     const say = b.firstElementChild
+//     say.innerText = ""
+//     const mo = document.getElementsByClassName('jo')
+//     const hit = Array.from(mo)
+//     const us = hit[0]
+//     us.innerText = ""
+//   }
+//   else {
+//     addWrong()
+//   }
+//   answerForm.reset()
+// })
 
 
 
