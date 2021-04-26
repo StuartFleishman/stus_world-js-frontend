@@ -71,8 +71,10 @@ function addQuestion({question, id, answer}) {
     const userValueUp = userValue.toUpperCase()
     if (hiddenUp === userValueUp.trim()) {
       let scoreCount = document.querySelector(".score-count")
+      let currentScore = parseInt(scoreCount.innerText)
+      let newScore = currentScore += 1
       answerForm.reset()
-      return scoreCount.innerHTML += 1
+      return scoreCount.innerText = newScore
     }
     else {
       console.log('not working')

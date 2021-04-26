@@ -31,6 +31,7 @@ function handleReset(e) {
   john[0].remove()
   const moo = document.getElementById('hello')
   moo.remove()
+  to.children[1].remove()
 }
 
 function handleScoreSubmit(e) {
