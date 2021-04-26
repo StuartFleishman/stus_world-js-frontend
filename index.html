@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
    
-    <!-- <div class="start_btn"><button>Start</button></div> -->
-
-
- 
     <header class="top-header">
       <p class="score">Score <span class="score-count"></span></p>
    </header>
@@ -64,6 +60,12 @@
     <input type="Submit" value="Submit">
   </form>
 
+  <form class="hidden" id="hello" autocomplete="off">
+    <label class="hidden">${answer}</label>
+    <input id="a" name="user-answer" type="text" />
+    <button type="submit">Answer</button>
+    </form>
+
 
   <form class="hidden" id="score-form">
     <label for="score-dropdown">User:</label>
@@ -79,8 +81,7 @@
 
 
 </body>
-<script src="src/categoriesClass.js"></script>
-<script src="https://kit.fontawesome.com/1466d4028b.js"></script>
+<script src="src/triviaApi.js"></script>
 <script src="src/gameScoreApi.js" charset="utf-8"></script>
 <script src="src/gameScoreClass.js" charset="utf-8"></script>
 <script src="src/userClass.js" charset="utf-8" type="text/javascript"></script>

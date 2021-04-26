@@ -10,10 +10,6 @@ const secondDropdown = document.getElementById('score-dropdown')
 
 const userInput = document.getElementById("user-name")
 
-const jerseyForm = document.getElementById('jersey')
-
-const jerseyAnswer = document.getElementById('answer')
-
 const score = document.getElementById('score')
 
 const wrong = document.getElementById('wrong')
