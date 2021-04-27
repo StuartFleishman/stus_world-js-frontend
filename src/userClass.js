@@ -2,9 +2,10 @@ class User {
 
   static all = []
 
-  constructor({id, name}) {
+  constructor({id, name, game_score}) {
     this.id = id
     this.name = name 
+    this.game_score = game_score
     this.element = document.createElement('li')
 
 

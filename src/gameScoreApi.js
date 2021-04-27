@@ -20,8 +20,8 @@ class GameScoreApi {
     fetch(this.baseURL, configObj)
     .then(resp => resp.json())
     .then(score => {
-      const i = new GameScore({id: score.id, score: score.score, user_id: score.user_id})
-      i.attachToUsers()
+      const i = new GameScore({id: score.data.id, score: score.data.attributes.score, user_id: score.data.attributes.user_id})
+      i.attachToScores()
     })
   }
 

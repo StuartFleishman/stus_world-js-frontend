@@ -11,12 +11,28 @@
       <!-- <p class="score">Score <span class="score-count">0</span></p> -->
    </header>
 
-   <ul class="user-scores" id="scores">Scores</ul>
+   <!-- <ul class="user-scores" id="scores">Scores</ul> -->
+
+   <div id="div-grid" class="grid-container">
+    <div class="item1 hidden" id="category-title">Category</div>
+    <div class="item2 hidden" id="question-title">Question</div>
+    <form class="hidden" id="number">
+      <label>Pick a Number between 1 - 1000</label>
+      <input type="text" id="user-number">
+      <button type="submit" value="submit">Submit</button>
+    </form>
+
+    <div class="item3" id="start">Start</div> 
+
+    <!-- <div class="item4"></div> -->
+    <!-- <div class="item5"></div> -->
+    <div class="item5 visible">Score <span class="score-count">0</span></p>
+  </div> -->
    
  
  </div>
 
- <h1 id="cat">Category:</h1>
+ <!-- <h1 id="cat">Category:</h1>
  
  <div id="to" class="grid-container" >
    <form class="hidden" id="ans" autocomplete="off">
@@ -82,7 +98,7 @@
 
   <ul id="users">Users</ul>
   <ul id="comments">Comments</ul>
-
+ -->
 
 </body>
 <script src="src/triviaApi.js"></script>

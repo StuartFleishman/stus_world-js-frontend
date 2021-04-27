@@ -12,18 +12,18 @@ class GameScore {
     GameScore.all.push(this)
   }
 
-  renderUser() {
+  renderScore() {
     this.element.innerHTML = `
       <div data-set=${this.user_id}> 
-      <strong class="scores">${this.score}</strong><span>
+      <strong class="scores">${this.user_id}</strong><span>${this.score}</span>
       </div> 
     `
 
     return this.element
   }
 
-  attachToUsers() {
-    ulScores.appendChild(this.renderUser())
+  attachToScores() {
+    ulScores.appendChild(this.renderScore())
   }
 
 

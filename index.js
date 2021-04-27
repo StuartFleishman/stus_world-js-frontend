@@ -3,7 +3,13 @@ const userForm = document.getElementById('user-form')
 const ulComments = document.getElementById('comments')
 const ulScores = document.getElementById('scores')
 
+const pickNumber = document.getElementById('Pick a Number')
+
+const finalScore = document.getElementById('user-score')
+
 const reset = document.getElementById('reset')
+
+const start_button = document.getElementById('start')
 
 
 const commentsForm = document.getElementById('comment-form')
@@ -18,11 +24,23 @@ const wrong = document.getElementById('wrong')
 const right = document.getElementById('right')
 const scoreForm = document.getElementById("score-form") 
 
-userForm.addEventListener('submit', handleFormSubmit)
-scoreForm.addEventListener('submit', handleScoreSubmit)
-commentsForm.addEventListener('submit', handleCommentSubmit)
+// userForm.addEventListener('submit', handleFormSubmit)
+// scoreForm.addEventListener('submit', handleScoreSubmit)
+// commentsForm.addEventListener('submit', handleCommentSubmit)
 
-reset.addEventListener('click', handleReset)
+// reset.addEventListener('click', handleReset)
+
+
+
+start_button.addEventListener('click', e => {
+  e.preventDefault()
+
+  const form = document.getElementById('number')
+  form.classList.add('visible')
+  start_button.classList.add('hidden')
+
+})
+
 
 function handleReset(e) {
   h1.firstElementChild.remove()

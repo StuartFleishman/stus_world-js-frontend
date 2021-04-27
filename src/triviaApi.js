@@ -15,7 +15,6 @@ function getCategories(catNum){
   .then(resp => resp.json())
     .then(data => {
       const spliceData = data.clues.splice(0,1)
-      newData = {...spliceData}
       spliceData.map(category => {
         if (category.question === "[audio]") {
           addError()
@@ -29,7 +28,8 @@ function getCategories(catNum){
   const p = document.createElement('p')
   const title = data.title
   p.innerText= title 
-  h1.appendChild(p)
+  const category = document.getElementById('category-title')
+  category.appendChild(p)
   
 })
 
@@ -41,8 +41,9 @@ function addError() {
 }
 
 function addQuestion({question, id, answer}) {
-  const clue = document.getElementById("to")
+  const divGrid = document.getElementById("div-grid")
   let div = document.createElement('div');
+  div.classList.add('item2')
   div.innerHTML =(`
   <h4> ${question}</h4>
   <form class="visible" id="hello" autocomplete="off">
@@ -51,12 +52,13 @@ function addQuestion({question, id, answer}) {
   <button type="submit">Answer</button>
   </form>
   `)
+  divGrid.appendChild(div)
 
 
   // div.classList.add("grid-item")
   answerArray.push(`${answer}}`)
    
-  clue.appendChild(div)
+  divGrid.appendChild(div)
 
 
   const q = document.getElementsByClassName('ans')
@@ -111,10 +113,14 @@ function addQuestion({question, id, answer}) {
 
 numForm.addEventListener('submit', e => {
   e.preventDefault()
-  const question = document.getElementById('question')
-  const catNum = question.value 
+  const cat = document.getElementById('category-title')
+  cat.classList.add('visible')
+  const userNumber = document.getElementById('user-number')
+  const catNum = (parseInt(e.target.children[1].value))
+  numForm.classList.remove('visible')
+  numForm.classList.add('hidden')
   getCategories(catNum)
-  numForm.reset()
+
 })
 
 // answerForm.addEventListener('submit', e => {
