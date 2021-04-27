@@ -15,14 +15,14 @@ class GameScore {
   renderUser() {
     this.element.innerHTML = `
       <div data-set=${this.user_id}> 
-      <strong class="name">${this.score}</strong><span>
+      <strong class="scores">${this.score}</strong><span>
       </div> 
     `
 
     return this.element
   }
 
-  attachToDom() {
+  attachToUsers() {
     ulScores.appendChild(this.renderUser())
   }
 

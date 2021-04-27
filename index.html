@@ -8,8 +8,10 @@
 </head>
    
     <header class="top-header">
-      <p class="score">Score <span class="score-count">0</span></p>
+      <!-- <p class="score">Score <span class="score-count">0</span></p> -->
    </header>
+
+   <ul class="user-scores" id="scores">Scores</ul>
    
  
  </div>
@@ -70,17 +72,16 @@
     </form>
 
 
-  <form class="hidden" id="score-form">
+  <form class="visible" id="score-form">
     <label for="score-dropdown">User:</label>
     <select name="user_id" id="score-dropdown">
     </select><br><br>
-    <h3>Score:<span id="score">0</span></h3>
+    <p class="score">Score <span class="score-count">0</span></p>
     <input type="Submit" value="Save">
   </form>
 
-  <ul class="hidden" id="users">Users</ul>
+  <ul id="users">Users</ul>
   <ul id="comments">Comments</ul>
-  <ul id="scores">Scores</ul>
 
 
 </body>

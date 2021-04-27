@@ -4,7 +4,7 @@ class GameScoreApi {
 
   static createScore(e) {
     const scoreData = {
-      score: parseInt(score.innerText),
+      score: parseInt(scoreCount.innerText),
       user_id: secondDropdown.value 
     }
   
@@ -19,9 +19,9 @@ class GameScoreApi {
   
     fetch(this.baseURL, configObj)
     .then(resp => resp.json())
-    .then(score => { console.log(score)
+    .then(score => {
       const i = new GameScore({id: score.id, score: score.score, user_id: score.user_id})
-      i.attachToDom()
+      i.attachToUsers()
     })
   }
 

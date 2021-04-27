@@ -38,3 +38,18 @@ body{
   font-size: 30px;
   text-align: center;
 }
+
+.user-scores {
+list-style-type: none;
+padding: 0;
+margin: 0;
+text-align: right;
+}
+
+.scores
+{
+background-image: url(arrow.gif);
+background-repeat: no-repeat;
+background-position: 100% .4em;
+padding-right: .6em;
+}
