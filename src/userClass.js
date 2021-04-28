@@ -23,7 +23,8 @@ class User {
   }
 
   attachToDom() {
-    ul.appendChild(this.renderUser())
+    const newDiv = document.getElementById('new-div')
+    newDiv.appendChild(this.renderUser())
   }
 
   addList(){

@@ -3,6 +3,7 @@ const userForm = document.getElementById('user-form')
 const ulComments = document.getElementById('comments')
 const ulScores = document.getElementById('scores')
 
+
 // const save = document.getElementById('save') 
 
 const pickNumber = document.getElementById('Pick a Number')
@@ -47,6 +48,10 @@ function handleSave(e) {
   const userForm = document.getElementById('make-user')
   userForm.classList.remove('hidden')
   userForm.classList.add('visible')
+  const newDiv = document.createElement('div')
+  newDiv.id = "new-div"
+  userForm.appendChild(newDiv)
+  
 
 }
 
