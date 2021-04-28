@@ -14,9 +14,11 @@ function getCategories(catNum){
   fetch(`https://jservice.io/api/category?id=${catNum}`)
   .then(resp => resp.json())
     .then(data => {
+      
+      console.log(data.clues)
       const spliceData = data.clues.splice(0,1)
       spliceData.map(category => {
-        if (category.question === "[audio]") {
+        if (category.question == "[audio]") {
           addError()
         }
         else {
@@ -34,10 +36,26 @@ function getCategories(catNum){
 })
 
 function addError() {
-  const clue = document.querySelector(".clue-text")
-  const li = document.createElement('li')
-  li.innerText = "This question is Audio, please choose a different number, SORRY!"
-  clue.appendChild(li)
+  const dGrid = document.getElementById("div-grid")
+  const div= document.createElement('div')
+  div.classList.add('item2')
+  div.innerText = "Unlucky Number, Roll Again!"
+  dGrid.appendChild(div)
+  const categoryRemove = document.getElementById('category-title')
+  const pTags = categoryRemove.children  
+  const pTag = Array.from(pTags) 
+  pTag[0].remove()
+  const ct = document.getElementById('category-title')
+  ct.innerText = ""
+  addScore()
+}
+
+function addScore() {
+  let sCount = document.getElementById("score-count")
+  let newestScore = sCount.innerText
+  let currentScore = parseInt(newestScore)
+  let finalScore = currentScore += 1
+  return sCount.innerText = finalScore
 }
 
 function addQuestion({question, id, answer}) {
@@ -72,7 +90,7 @@ function addQuestion({question, id, answer}) {
     const userValue = e.target.children[1].value
     const userValueUp = userValue.toUpperCase()
     if (hiddenUp === userValueUp.trim()) {
-      let scoreCount = document.querySelector(".score-count")
+      let scoreCount = document.getElementById("score-count")
       let currentScore = parseInt(scoreCount.innerText)
       let newScore = currentScore += 1
       answerForm.reset()
