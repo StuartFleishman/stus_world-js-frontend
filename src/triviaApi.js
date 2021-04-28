@@ -123,7 +123,7 @@ numForm.addEventListener('submit', e => {
   numForm.classList.remove('visible')
   numForm.classList.add('hidden')
   getCategories(catNum)
-
+  numForm.reset()
 })
 
 // answerForm.addEventListener('submit', e => {
