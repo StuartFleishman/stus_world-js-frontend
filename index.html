@@ -9,7 +9,7 @@
    
     <header class="top-header">
       <!-- <p class="score">Score <span class="score-count">0</span></p> -->
-      <button class="save" type="submit" value="save">Save</h5>
+      <button class="save" type="submit" id="save" value="save">Save</h5>
    </header>
 
    <!-- <ul class="user-scores" id="scores">Scores</ul> -->
@@ -24,6 +24,11 @@
     </form>
 
     <div class="item3" id="start">Start
+      <form class="hidden" id="user-form">
+        <label for="user">User Name:</label><br>
+        <input type="text" id="user" name="name"><br>
+        <input type="Submit" value="Submit">
+      </form>
       <button class="item3 hidden" type="submit" id="reset"></button>
     </div> 
   

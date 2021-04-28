@@ -3,6 +3,8 @@ const userForm = document.getElementById('user-form')
 const ulComments = document.getElementById('comments')
 const ulScores = document.getElementById('scores')
 
+const save = document.getElementById('save') 
+
 const pickNumber = document.getElementById('Pick a Number')
 
 const finalScore = document.getElementById('user-score')
@@ -27,6 +29,16 @@ const scoreForm = document.getElementById("score-form")
 // userForm.addEventListener('submit', handleFormSubmit)
 // scoreForm.addEventListener('submit', handleScoreSubmit)
 // commentsForm.addEventListener('submit', handleCommentSubmit)
+
+save.addEventListener('click', handleSave)
+
+function handleSave(e) {
+  e.preventDefault()
+  const userInfo = document.getElementById('user-form')
+  userInfo.classList.remove('hidden')
+  userInfo.classList.add('visible')
+  console.log('in da save')
+}
 
 reset.addEventListener('click', handleReset)
 
