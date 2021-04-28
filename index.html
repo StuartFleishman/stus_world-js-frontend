@@ -9,12 +9,19 @@
    
     <header class="top-header">
       <!-- <p class="score">Score <span class="score-count">0</span></p> -->
-      <button class="save" type="submit" id="save" value="save">Save</h5>
+      <button class="hidden" type="submit" id="save" value="save">Save</h5>
    </header>
 
    <!-- <ul class="user-scores" id="scores">Scores</ul> -->
+   <div class="hidden" id="make-user">
+    <form class="center" id="user-form">
+      <label for="user">User Name:</label><br>
+      <input type="text" id="user" name="name"><br>
+      <input type="Submit" value="Submit">
+    </form> 
+   </div>
 
-   <div id="div-grid" class="grid-container">
+   <div id="div-grid" class="grid-container" id="top-div">
     <div class="item1 hidden" id="category-title">Category</div>
     <div class="item2 hidden" id="question-title">Question</div>
     <form class="hidden" id="number">
@@ -24,11 +31,6 @@
     </form>
 
     <div class="item3" id="start">Start
-      <form class="hidden" id="user-form">
-        <label for="user">User Name:</label><br>
-        <input type="text" id="user" name="name"><br>
-        <input type="Submit" value="Submit">
-      </form>
       <button class="item3 hidden" type="submit" id="reset"></button>
     </div> 
   
@@ -41,7 +43,7 @@
  
  </div>
 
- <!-- <h1 id="cat">Category:</h1>
+
  
  <div id="to" class="grid-container" >
    <form class="hidden" id="ans" autocomplete="off">
@@ -49,14 +51,14 @@
      <button type="submit">Answer</button>
   </form>
  
- </div>
+ <!-- </div>
  <form id="number">
    <label>Pick a Number between 1 - 1000</label>
    <input type="text" id="question">
    <button type="submit" value="submit">Submit</button>
  </form>
 
- <button type="submit" id="reset">Reset</button>
+ <button type="submit" id="reset">Reset</button> -->
 
 
 
@@ -67,47 +69,49 @@
 
 
 
-  <div id="test"></div>
+  <!-- <div id="test"></div>
 
 
 
     <h2 id="wrong" class="hidden">wrong answer!</h2>
-    <h2 id="right" class="hidden">right answer!</h2>
+    <h2 id="right" class="hidden">right answer!</h2> -->
 
-
-  <form class="visible" id="user-form">
+ <!-- <div class="hidden" id="make-user">
+  <form class="center" id="user-form">
     <label for="user">User Name:</label><br>
     <input type="text" id="user" name="name"><br>
     <input type="Submit" value="Submit">
-  </form>
+  </form> 
+ </div> -->
 
-  <form class="visible" id="comment-form">
+
+  <!-- <form class="visible" id="comment-form">
     <label for="user-dropdown">User:</label>
     <select name="user_id" id="user-dropdown">
     </select><br><br>
     <label for="user-dropdown">Comment:</label>
     <input type="text" id="comment" name="text"><br>
     <input type="Submit" value="Submit">
-  </form>
+  </form> -->
 
-  <form class="hidden" id="hello" autocomplete="off">
+  <!-- <form class="hidden" id="hello" autocomplete="off">
     <label class="hidden">${answer}</label>
     <input id="a" name="user-answer" type="text" />
     <button type="submit">Answer</button>
-    </form>
+    </form> -->
 
 
-  <form class="visible" id="score-form">
+  <!-- <form class="visible" id="score-form">
     <label for="score-dropdown">User:</label>
     <select name="user_id" id="score-dropdown">
     </select><br><br>
     <p class="score">Score <span class="score-count">0</span></p>
     <input type="Submit" value="Save">
-  </form>
+  </form> -->
 
-  <ul id="users">Users</ul>
-  <ul id="comments">Comments</ul>
- -->
+  <!-- <ul id="users">Users</ul>
+  <ul id="comments">Comments</ul> -->
+ 
 
 </body>
 <script src="src/triviaApi.js"></script>

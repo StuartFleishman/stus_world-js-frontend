@@ -3,7 +3,7 @@ const userForm = document.getElementById('user-form')
 const ulComments = document.getElementById('comments')
 const ulScores = document.getElementById('scores')
 
-const save = document.getElementById('save') 
+// const save = document.getElementById('save') 
 
 const pickNumber = document.getElementById('Pick a Number')
 
@@ -26,18 +26,28 @@ const wrong = document.getElementById('wrong')
 const right = document.getElementById('right')
 const scoreForm = document.getElementById("score-form") 
 
-// userForm.addEventListener('submit', handleFormSubmit)
+userForm.addEventListener('submit', handleFormSubmit)
 // scoreForm.addEventListener('submit', handleScoreSubmit)
 // commentsForm.addEventListener('submit', handleCommentSubmit)
+
+function handleFormSubmit(e) {
+  e.preventDefault()
+  UserApi.createUser(e)
+  userForm.reset()
+}
 
 save.addEventListener('click', handleSave)
 
 function handleSave(e) {
   e.preventDefault()
-  const userInfo = document.getElementById('user-form')
-  userInfo.classList.remove('hidden')
-  userInfo.classList.add('visible')
-  console.log('in da save')
+  save.innerText = ""
+  const topDiv = document.getElementsByClassName('grid-container')
+  const arrayDiv = Array.from(topDiv)
+  arrayDiv.map( e => e.remove() )
+  const userForm = document.getElementById('make-user')
+  userForm.classList.remove('hidden')
+  userForm.classList.add('visible')
+
 }
 
 reset.addEventListener('click', handleReset)
@@ -46,6 +56,9 @@ reset.addEventListener('click', handleReset)
 
 start_button.addEventListener('click', e => {
   e.preventDefault()
+  const save = document.getElementById('save') 
+  save.classList.remove('hidden')
+  save.classList.add('visible')
 
   const form = document.getElementById('number')
   form.classList.add('visible')
@@ -84,11 +97,11 @@ function handleScoreSubmit(e) {
 
 
 
-function handleFormSubmit(e) {
-  e.preventDefault()
-  UserApi.createUser(e)
-  userForm.reset()
-}
+// function handleFormSubmit(e) {
+//   e.preventDefault()
+//   UserApi.createUser(e)
+//   userForm.reset()
+// }
 
 function handleCommentSubmit(e) {
   e.preventDefault()
