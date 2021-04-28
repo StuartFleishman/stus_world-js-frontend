@@ -29,10 +29,13 @@ const scoreForm = document.getElementById("score-form")
 
 userForm.addEventListener('submit', handleFormSubmit)
 // scoreForm.addEventListener('submit', handleScoreSubmit)
-// commentsForm.addEventListener('submit', handleCommentSubmit)
+commentsForm.addEventListener('submit', handleCommentSubmit)
 
 function handleFormSubmit(e) {
   e.preventDefault()
+  const commentForm = document.getElementById('comment-form')
+  commentForm.classList.remove('hidden')
+  commentForm.classList.add('visible')
   UserApi.createUser(e)
   userForm.reset()
 }
@@ -110,6 +113,8 @@ function handleScoreSubmit(e) {
 
 function handleCommentSubmit(e) {
   e.preventDefault()
+  ulComments.classList.remove('hidden')
+  ulComments.classList.add('visible')
   CommentApi.createComment(e)
   commentsForm.reset()
 }

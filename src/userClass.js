@@ -24,7 +24,15 @@ class User {
 
   attachToDom() {
     const newDiv = document.getElementById('new-div')
-    newDiv.appendChild(this.renderUser())
+    // newDiv.appendChild(this.renderUser())
+    const otherdiv = document.createElement('div')
+    const select = document.createElement("SELECT")
+    const option = document.createElement('option')
+    option.value  = this.id 
+    option.innerText = this.name
+    select.appendChild(option)
+
+    newDiv.appendChild(select)
   }
 
   addList(){
@@ -35,6 +43,7 @@ class User {
 }
 
 addSecondList(){
+  const select = document.createElement("SELECT")
   const option = document.createElement('option')
   option.value  = this.id 
   option.innerText = this.name
