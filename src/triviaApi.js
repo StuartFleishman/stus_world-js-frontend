@@ -114,6 +114,9 @@ function addQuestion({question, id, answer}) {
 numForm.addEventListener('submit', e => {
   e.preventDefault()
   const cat = document.getElementById('category-title')
+  const reset = document.getElementById('reset')
+  reset.classList.add('visible')
+  reset.innerText = "Reset"
   cat.classList.add('visible')
   const userNumber = document.getElementById('user-number')
   const catNum = (parseInt(e.target.children[1].value))

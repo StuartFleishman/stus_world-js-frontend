@@ -28,7 +28,7 @@ const scoreForm = document.getElementById("score-form")
 // scoreForm.addEventListener('submit', handleScoreSubmit)
 // commentsForm.addEventListener('submit', handleCommentSubmit)
 
-// reset.addEventListener('click', handleReset)
+reset.addEventListener('click', handleReset)
 
 
 
@@ -43,10 +43,22 @@ start_button.addEventListener('click', e => {
 
 
 function handleReset(e) {
-  h1.firstElementChild.remove()
-  const yoko = document.getElementsByTagName('h4')
-  const john = Array.from(yoko) 
-  john[0].remove()
+  e.preventDefault()
+  const bttn = document.getElementById('reset')
+  // bttn.classList.add("hidden")
+  bttn.innerText = ""
+  const categoryRemove = document.getElementById('category-title')
+  const pTags = categoryRemove.children  
+  const pTag = Array.from(pTags) 
+  pTag[0].remove()
+
+
+  
+  const h4 = document.getElementsByTagName('h4')
+  const removeh4 = Array.from(h4) 
+  removeh4[0].remove()
+
+
   const moo = document.getElementById('hello')
   moo.remove()
   to.children[1].remove()
