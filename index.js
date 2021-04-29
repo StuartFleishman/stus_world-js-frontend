@@ -146,8 +146,9 @@ numForm.addEventListener('submit', e => {
   TriviaApi.getCategories(catNum)
 
   que.classList.add('visible')
-
+  answerForm.classList.remove('hidden')
   answerForm.classList.add('visible')
+  answerForm.classList.add('item2')
   
   const cat = document.getElementById('category-title')
   const reset = document.getElementById('reset')
