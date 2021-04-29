@@ -13,6 +13,7 @@ body{
 
 .start_button {
   text-align: center;
+  background-color: black;
 }
 
 
@@ -20,10 +21,15 @@ body{
 
 .hidden {
   visibility: hidden;
+  padding: 0px
 }
 
 .visible {
   visibility: visible;
+}
+
+.save {
+  font-size: xx-large;
 }
 
 

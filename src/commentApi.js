@@ -7,7 +7,7 @@ class CommentApi {
     .then(response => response.json())
     .then(json => {
       json.data.forEach(comment => {
-        const t = new Comment({text: comment.attributes.text})
+        const t = new Comment({text: comment.attributes.text, user_id: comment.attributes.user_id})
         t.addToDom()
       })
     })
@@ -16,7 +16,7 @@ class CommentApi {
   static createComment(e) {
     const commentData = {
       text: e.target.comment.value,
-      user_id: dropdown.value
+      user_id: parseInt(dropdown.value)
     }
   
     const configObj = {
@@ -32,7 +32,7 @@ class CommentApi {
     .then(resp => resp.json())
     .then(json => {
       const newComment = json.data
-      const to = new Comment({text: newComment.attributes.text, userID: newComment.attributes.user_id})
+      const to = new Comment({text: newComment.attributes.text, user_id: newComment.attributes.user_id})
       to.addToDom()
     })
   }

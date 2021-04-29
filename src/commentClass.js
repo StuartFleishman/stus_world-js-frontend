@@ -4,7 +4,7 @@ class Comment {
 
   constructor({text, user_id}) {
     this.text = text 
-    this.userId = user_id 
+    this.user_id = user_id 
     this.element = document.createElement('li')
     Comment.all.push(this)
   }
@@ -12,7 +12,7 @@ class Comment {
   render() {
     this.element.innerHTML = `
       <div> 
-      <strong class="name">${this.text}</strong>
+      <strong class="name" id="${this.user_id}">${this.text}</strong>
       </div> 
     `
 

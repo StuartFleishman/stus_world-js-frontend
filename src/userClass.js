@@ -22,18 +22,19 @@ class User {
     return this.element
   }
 
-  attachToDom() {
-    const newDiv = document.getElementById('new-div')
-    // newDiv.appendChild(this.renderUser())
-    const otherdiv = document.createElement('div')
-    const select = document.createElement("SELECT")
-    const option = document.createElement('option')
-    option.value  = this.id 
-    option.innerText = this.name
-    select.appendChild(option)
-
-    newDiv.appendChild(select)
-  }
+  // attachToDom() {
+  //   let newDiv = document.getElementsByClassName('item3')
+  //   const arrayDiv = Array.from(newDiv)
+  //   // newDiv.appendChild(this.renderUser())
+  //   const otherdiv = document.createElement('div')
+  //   const select = document.createElement("SELECT")
+  //   select.classList.add('hidden')
+  //   const option = document.createElement('option')
+  //   option.value  = this.id 
+  //   option.innerText = this.name
+  //   select.appendChild(option)
+  //   arrayDiv[0].appendChild(select)
+  // }
 
   addList(){
     const option = document.createElement('option')

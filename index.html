@@ -6,19 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
+
    
     <header class="top-header">
       <!-- <p class="score">Score <span class="score-count">0</span></p> -->
-      <button class="hidden" type="submit" id="save" value="save">Save</h5>
+      <button class="save hidden" type="submit" id="save" value="save">Save</h5>
    </header>
+   <div id="div-grid" class="grid-container" id="top-div">
+    <div class="item1 hidden" id="category-title">Category</div>
+    <div class="item2 hidden" id="question-title">Question</div>
+    <form class="hidden" id="number">
+      <label>Pick a Number between 1 - 1560</label>
+      <input type="text" id="user-number">
+      <button type="submit" value="submit">Submit</button>
+    </form>
 
-   <!-- <ul class="user-scores" id="scores">Scores</ul> -->
+   <ul class="user-scores" id="scores"></ul>
    <div class="hidden" id="make-user">
     <form class="center" id="user-form">
       <label for="user">User Name:</label><br>
       <input type="text" id="user" name="name"><br>
       <input type="Submit" value="Submit">
     </form> 
+
+   <h1></h1> 
 
   <form class="hidden" id="comment-form">
     <label for="user-dropdown">User:</label>
@@ -28,18 +39,19 @@
     <input type="text" id="comment" name="text"><br>
     <input type="Submit" value="Submit">
   </form>
-  <ul class="hidden" id="users">Users</ul>
+  <!-- <ul class="hidden" id="users">Users</ul> -->
   <ul class="hidden" id="comments">Comments</ul>
    </div>
 
-   <div id="div-grid" class="grid-container" id="top-div">
+   <!-- <div id="div-grid" class="grid-container" id="top-div">
     <div class="item1 hidden" id="category-title">Category</div>
     <div class="item2 hidden" id="question-title">Question</div>
     <form class="hidden" id="number">
       <label>Pick a Number between 1 - 1560</label>
       <input type="text" id="user-number">
       <button type="submit" value="submit">Submit</button>
-    </form>
+    </form> -->
+    <!-- <button class="hidden" type="submit" id="save" value="save">Save</h5> -->
 
     <div class="item3" id="start">Start
       <button class="item3 hidden" type="submit" id="reset"></button>
@@ -56,12 +68,12 @@
 
 
  
- <div id="to" class="grid-container" >
+ <!-- <div id="to" class="grid-container" >
    <form class="hidden" id="ans" autocomplete="off">
      <input id="a" name="user-answer" type="text" />
      <button type="submit">Answer</button>
   </form>
- 
+  -->
  <!-- </div>
  <form id="number">
    <label>Pick a Number between 1 - 1000</label>

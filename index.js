@@ -4,7 +4,7 @@ const ulComments = document.getElementById('comments')
 const ulScores = document.getElementById('scores')
 
 
-// const save = document.getElementById('save') 
+const save = document.getElementById('save') 
 
 const pickNumber = document.getElementById('Pick a Number')
 
@@ -37,23 +37,24 @@ function handleFormSubmit(e) {
   commentForm.classList.remove('hidden')
   commentForm.classList.add('visible')
   UserApi.createUser(e)
-  userForm.reset()
+  userForm.innerText = "thanks for playing"
 }
 
 save.addEventListener('click', handleSave)
 
 function handleSave(e) {
   e.preventDefault()
+  console.log(e.target)
   save.innerText = ""
-  const topDiv = document.getElementsByClassName('grid-container')
-  const arrayDiv = Array.from(topDiv)
-  arrayDiv.map( e => e.remove() )
+  // const topDiv = document.getElementsByClassName('grid-container')
+  // const arrayDiv = Array.from(topDiv)
+  // arrayDiv.map( e => e.remove() )
   const userForm = document.getElementById('make-user')
   userForm.classList.remove('hidden')
   userForm.classList.add('visible')
   const newDiv = document.createElement('div')
   newDiv.id = "new-div"
-  userForm.appendChild(newDiv)
+  document.body.append(newDiv)
   
 
 }
