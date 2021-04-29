@@ -19,6 +19,8 @@ const ulScores = document.getElementById('scores')
 const finalScore = document.getElementById('user-score')
 const score = document.getElementById('score')
 const scoreForm = document.getElementById("score-form") 
+let scoreCount = document.getElementById("score-count")
+
 
 //Save Btn
 const save = document.getElementById('save') 
@@ -43,7 +45,7 @@ const numForm = document.getElementById('number')
 const h1 = document.getElementById('cat')
 
 const inputValue = document.getElementById('a')
-let scoreCount = document.querySelector(".score-count")
+
 
 //Check User Answer
 let answerForm = document.getElementById('answer-form')
@@ -112,11 +114,18 @@ function handleReset(e) {
   const pTag = Array.from(pTags) 
   pTag[0].remove()
 
-
+  const rightAnswer = document.getElementById('right-answer')
+  rightAnswer.id = ""
+  rightAnswer.innerText = ""
   
-  const h4 = document.getElementsByTagName('h4')
-  const removeh4 = Array.from(h4) 
-  removeh4[0].remove()
+
+  que.innerText = ""
+  
+
+
+
+ 
+  
 
 
   const moo = document.getElementById('hello')
@@ -164,10 +173,13 @@ numForm.addEventListener('submit', e => {
 //check user answer 
 answerForm.addEventListener('submit', e => {
   e.preventDefault()
-
+  
+  const rightAnswer = document.getElementById('right-answer')
+  const rightAnswerCaps = rightAnswer.innerHTML.toUpperCase()
   const userValue = e.target.children[0].value
   const userValueUp = userValue.toUpperCase()
-  if (answerArray[0].toUpperCase() === userValueUp.trim()) {
+ 
+  if (rightAnswerCaps === userValueUp.trim()) {
     let scoreCount = document.getElementById("score-count")
     let currentScore = parseInt(scoreCount.innerText)
     let newScore = currentScore += 1

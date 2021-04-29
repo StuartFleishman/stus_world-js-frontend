@@ -16,15 +16,12 @@ class Trivia {
   render() {
     this.element.innerHTML = `
       <p>${this.question}</p>
+      <p id="right-answer" class="hidden">${this.answer}</p>
     `
-    
-     
-    
-
-
 
     return this.element
   }
+
 
   addDom() {
     que.appendChild(this.render())
