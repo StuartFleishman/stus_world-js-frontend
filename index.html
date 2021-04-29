@@ -9,12 +9,15 @@
 
    
     <header class="top-header">
-      <!-- <p class="score">Score <span class="score-count">0</span></p> -->
       <button class="save hidden" type="submit" id="save" value="save">Save</h5>
    </header>
    <div id="div-grid" class="grid-container" id="top-div">
     <div class="item1 hidden" id="category-title">Category</div>
-    <div class="item2 hidden" id="question-title">Question</div>
+    <div class="item2 hidden" id="question-title"></div>
+    <form class="hidden" id="answer-form"> 
+      <input name="user-answer" >
+      <button type="submit">Answer</button>
+      </form>
     <form class="hidden" id="number">
       <label>Pick a Number between 1 - 1560</label>
       <input type="text" id="user-number">
@@ -29,7 +32,6 @@
       <input type="Submit" value="Submit">
     </form> 
 
-   <h1></h1> 
 
   <form class="hidden" id="comment-form">
     <label for="user-dropdown">User:</label>
@@ -39,103 +41,28 @@
     <input type="text" id="comment" name="text"><br>
     <input type="Submit" value="Submit">
   </form>
-  <!-- <ul class="hidden" id="users">Users</ul> -->
   <ul class="hidden" id="comments">Comments</ul>
    </div>
 
-   <!-- <div id="div-grid" class="grid-container" id="top-div">
-    <div class="item1 hidden" id="category-title">Category</div>
-    <div class="item2 hidden" id="question-title">Question</div>
-    <form class="hidden" id="number">
-      <label>Pick a Number between 1 - 1560</label>
-      <input type="text" id="user-number">
-      <button type="submit" value="submit">Submit</button>
-    </form> -->
-    <!-- <button class="hidden" type="submit" id="save" value="save">Save</h5> -->
 
     <div class="item3" id="start">Start
       <button class="item3 hidden" type="submit" id="reset"></button>
     </div> 
   
 
-    <!-- <div class="item4"></div> -->
-    <!-- <div class="item5"></div> -->
+ 
     <div class="item5 visible">Score <span id="score-count">0</span></p>
-  </div> -->
+  </div>
    
  
  </div>
 
 
  
- <!-- <div id="to" class="grid-container" >
-   <form class="hidden" id="ans" autocomplete="off">
-     <input id="a" name="user-answer" type="text" />
-     <button type="submit">Answer</button>
-  </form>
-  -->
- <!-- </div>
- <form id="number">
-   <label>Pick a Number between 1 - 1000</label>
-   <input type="text" id="question">
-   <button type="submit" value="submit">Submit</button>
- </form>
-
- <button type="submit" id="reset">Reset</button> -->
-
-
-
-
-
-
-
-
-
-
-  <!-- <div id="test"></div>
-
-
-
-    <h2 id="wrong" class="hidden">wrong answer!</h2>
-    <h2 id="right" class="hidden">right answer!</h2> -->
-
- <!-- <div class="hidden" id="make-user">
-  <form class="center" id="user-form">
-    <label for="user">User Name:</label><br>
-    <input type="text" id="user" name="name"><br>
-    <input type="Submit" value="Submit">
-  </form> 
- </div> -->
-
-<!-- 
-  <form class="hidden" id="comment-form">
-    <label for="user-dropdown">User:</label>
-    <select name="user_id" id="user-dropdown">
-    </select><br><br>
-    <label for="user-dropdown">Comment:</label>
-    <input type="text" id="comment" name="text"><br>
-    <input type="Submit" value="Submit">
-  </form> -->
-
-  <!-- <form class="hidden" id="hello" autocomplete="off">
-    <label class="hidden">${answer}</label>
-    <input id="a" name="user-answer" type="text" />
-    <button type="submit">Answer</button>
-    </form> -->
-
-
-  <!-- <form class="visible" id="score-form">
-    <label for="score-dropdown">User:</label>
-    <select name="user_id" id="score-dropdown">
-    </select><br><br>
-    <p class="score">Score <span class="score-count">0</span></p>
-    <input type="Submit" value="Save">
-  </form> -->
-
-
  
 
 </body>
+<script src="src/triviaClass.js"></script>
 <script src="src/triviaApi.js"></script>
 <script src="src/gameScoreApi.js" charset="utf-8"></script>
 <script src="src/gameScoreClass.js" charset="utf-8"></script>
@@ -143,5 +70,5 @@
 <script src="src/commentClass.js" charset="utf-8" type="text/javascript"></script>
 <script src="src/commentApi.js" charset="utf-8" type="text/javascript"></script>
 <script src="src/userApi.js" charset="utf-8" type="text/javascript"></script>
-<script src="index.js" charset="utf-8" type="text/javascript"></script>
+<script src="index.js" charset="utf-8" type="text/javascript" ></script>
 </html>

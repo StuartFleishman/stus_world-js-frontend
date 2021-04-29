@@ -6,6 +6,9 @@ const dropdown = document.getElementById('user-dropdown')
 const userInput = document.getElementById("user-name")
 const secondDropdown = document.getElementById('score-dropdown')
 
+//question
+const que = document.getElementById('question-title')
+
 
 // Comment Stuff 
 const ulComments = document.getElementById('comments')
@@ -33,6 +36,18 @@ const start_button = document.getElementById('start')
 //Right & Wrong Btns(not using )
 const wrong = document.getElementById('wrong')
 const right = document.getElementById('right')
+
+//Pick a number between 1-1560
+const numForm = document.getElementById('number')
+
+const h1 = document.getElementById('cat')
+
+const inputValue = document.getElementById('a')
+let scoreCount = document.querySelector(".score-count")
+
+//Check User Answer
+let answerForm = document.getElementById('answer-form')
+const answerArray = []
 
 
 //EVENT LISTENERS USERS
@@ -91,7 +106,6 @@ reset.addEventListener('click', handleReset)
 function handleReset(e) {
   e.preventDefault()
   const bttn = document.getElementById('reset')
-  // bttn.classList.add("hidden")
   bttn.innerText = ""
   const categoryRemove = document.getElementById('category-title')
   const pTags = categoryRemove.children  
@@ -122,6 +136,47 @@ start_button.addEventListener('click', e => {
   form.classList.add('visible')
   start_button.classList.add('hidden')
 
+})
+
+//pick a number between 1-1560
+numForm.addEventListener('submit', e => {
+  e.preventDefault()
+
+  const catNum = (parseInt(e.target.children[1].value))
+  TriviaApi.getCategories(catNum)
+
+  que.classList.add('visible')
+
+  answerForm.classList.add('visible')
+  
+  const cat = document.getElementById('category-title')
+  const reset = document.getElementById('reset')
+  reset.classList.add('visible')
+  reset.innerText = "Reset"
+  cat.classList.add('visible')
+  const userNumber = document.getElementById('user-number')
+  numForm.classList.remove('visible')
+  numForm.classList.add('hidden')
+  numForm.reset()
+})
+
+//check user answer 
+answerForm.addEventListener('submit', e => {
+  e.preventDefault()
+
+  const userValue = e.target.children[0].value
+  const userValueUp = userValue.toUpperCase()
+  if (answerArray[0].toUpperCase() === userValueUp.trim()) {
+    let scoreCount = document.getElementById("score-count")
+    let currentScore = parseInt(scoreCount.innerText)
+    let newScore = currentScore += 1
+    answerForm.reset()
+    return scoreCount.innerText = newScore
+  }
+  else {
+    console.log('not working')
+  }
+  answerForm.reset()
 })
 
 
