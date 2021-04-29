@@ -1,35 +1,42 @@
+
+// User Stuff 
 const ul = document.getElementById('users')
 const userForm = document.getElementById('user-form')
-const ulComments = document.getElementById('comments')
-const ulScores = document.getElementById('scores')
-
-
-const save = document.getElementById('save') 
-
-const pickNumber = document.getElementById('Pick a Number')
-
-const finalScore = document.getElementById('user-score')
-
-const reset = document.getElementById('reset')
-
-const start_button = document.getElementById('start')
-
-
-const commentsForm = document.getElementById('comment-form')
 const dropdown = document.getElementById('user-dropdown')
+const userInput = document.getElementById("user-name")
 const secondDropdown = document.getElementById('score-dropdown')
 
-const userInput = document.getElementById("user-name")
 
+// Comment Stuff 
+const ulComments = document.getElementById('comments')
+const commentsForm = document.getElementById('comment-form')
+
+//Score Stuff
+const ulScores = document.getElementById('scores')
+const finalScore = document.getElementById('user-score')
 const score = document.getElementById('score')
-
-const wrong = document.getElementById('wrong')
-const right = document.getElementById('right')
 const scoreForm = document.getElementById("score-form") 
 
+//Save Btn
+const save = document.getElementById('save') 
+
+//Choose Number
+const pickNumber = document.getElementById('Pick a Number')
+
+
+//Rest BTN
+const reset = document.getElementById('reset')
+
+//Start BTN
+const start_button = document.getElementById('start')
+
+//Right & Wrong Btns(not using )
+const wrong = document.getElementById('wrong')
+const right = document.getElementById('right')
+
+
+//EVENT LISTENERS USERS
 userForm.addEventListener('submit', handleFormSubmit)
-// scoreForm.addEventListener('submit', handleScoreSubmit)
-commentsForm.addEventListener('submit', handleCommentSubmit)
 
 function handleFormSubmit(e) {
   e.preventDefault()
@@ -40,6 +47,26 @@ function handleFormSubmit(e) {
   userForm.innerText = "thanks for playing"
 }
 
+
+
+// scoreForm.addEventListener('submit', handleScoreSubmit)
+// function handleScoreSubmit(e) {
+//   e.preventDefault()
+//   GameScoreApi.createScore(e)
+// }
+
+//COMMENT LISTENER
+commentsForm.addEventListener('submit', handleCommentSubmit)
+
+function handleCommentSubmit(e) {
+  e.preventDefault()
+  ulComments.classList.remove('hidden')
+  ulComments.classList.add('visible')
+  CommentApi.createComment(e)
+  commentsForm.reset()
+  }
+
+//SAVE STUFF
 save.addEventListener('click', handleSave)
 
 function handleSave(e) {
@@ -59,23 +86,8 @@ function handleSave(e) {
 
 }
 
+//RESET BTN EVENT
 reset.addEventListener('click', handleReset)
-
-
-
-start_button.addEventListener('click', e => {
-  e.preventDefault()
-  const save = document.getElementById('save') 
-  save.classList.remove('hidden')
-  save.classList.add('visible')
-
-  const form = document.getElementById('number')
-  form.classList.add('visible')
-  start_button.classList.add('hidden')
-
-})
-
-
 function handleReset(e) {
   e.preventDefault()
   const bttn = document.getElementById('reset')
@@ -98,36 +110,20 @@ function handleReset(e) {
   to.children[1].remove()
 }
 
-function handleScoreSubmit(e) {
+
+//START BTN 
+start_button.addEventListener('click', e => {
   e.preventDefault()
-  GameScoreApi.createScore(e)
-}
+  const save = document.getElementById('save') 
+  save.classList.remove('hidden')
+  save.classList.add('visible')
+
+  const form = document.getElementById('number')
+  form.classList.add('visible')
+  start_button.classList.add('hidden')
+
+})
 
 
-
-
-// function handleFormSubmit(e) {
-//   e.preventDefault()
-//   UserApi.createUser(e)
-//   userForm.reset()
-// }
-
-function handleCommentSubmit(e) {
-  e.preventDefault()
-  ulComments.classList.remove('hidden')
-  ulComments.classList.add('visible')
-  CommentApi.createComment(e)
-  commentsForm.reset()
-}
-
-const start_btn = document.querySelector(".start_btn button")
-
-// start_btn.addEventListener('click', e => {
-//   const yoyo = document.getElementById('hi')
-//   yoyo.className = "visible"
-//   start_btn.className = "hidden"
-//    })
-
-
-UserApi.getUsers()
+// UserApi.getUsers()
 CommentApi.getComments()
