@@ -8,9 +8,7 @@ class UserApi {
     .then(json => {
       json.data.map(user => {
         const i = new User({id: user.id, name: user.attributes.name})
-        // i.attachToDom()
         i.addList()
-        // i.addSecondList()
       })
       CommentApi.getComments()
     })

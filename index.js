@@ -40,11 +40,6 @@ const start_button = document.getElementById('start')
 //Pick a number between 1-1560
 const numForm = document.getElementById('number')
 
-// const h1 = document.getElementById('cat')
-
-// const inputValue = document.getElementById('a')
-
-
 //Check User Answer
 let answerForm = document.getElementById('answer-form')
 
@@ -60,14 +55,6 @@ function handleFormSubmit(e) {
   UserApi.createUser(e)
   userForm.innerText = "thanks for playing"
 }
-
-
-
-// scoreForm.addEventListener('submit', handleScoreSubmit)
-// function handleScoreSubmit(e) {
-//   e.preventDefault()
-//   GameScoreApi.createScore(e)
-// }
 
 //COMMENT LISTENER
 commentsForm.addEventListener('submit', handleCommentSubmit)
@@ -85,26 +72,23 @@ save.addEventListener('click', handleSave)
 
 function handleSave(e) {
   e.preventDefault()
-  console.log(e.target)
   save.innerText = ""
-  // const topDiv = document.getElementsByClassName('grid-container')
-  // const arrayDiv = Array.from(topDiv)
-  // arrayDiv.map( e => e.remove() )
 
-  const pick = document.getElementById("number")
-  pick.remove()
+
+ 
+  numForm.remove()
   que.remove()
   reset.remove()
   answerForm.remove()
 
-  const hi = document.getElementById('category-title')
-  hi.remove()
+  const catTitle = document.getElementById('category-title')
+  catTitle.remove()
   const userForm = document.getElementById('make-user')
   userForm.classList.remove('hidden')
   userForm.classList.add('visible')
-  const newDiv = document.createElement('div')
-  newDiv.id = "new-div"
-  document.body.append(newDiv)
+  // const newDiv = document.createElement('div')
+  // newDiv.id = "new-div"
+  // document.body.append(newDiv)
   
 
 }
@@ -140,9 +124,9 @@ function handleReset(e) {
   
 
 
-  const moo = document.getElementById('hello')
-  moo.remove()
-  to.children[1].remove()
+  // const moo = document.getElementById('hello')
+  // moo.remove()
+  // to.children[1].remove()
 }
 
 
