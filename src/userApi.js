@@ -8,11 +8,13 @@ class UserApi {
     .then(json => {
       json.data.map(user => {
         const i = new User({id: user.id, name: user.attributes.name})
-        i.attachToDom()
+        // i.attachToDom()
         i.addList()
-        i.addSecondList()
+        // i.addSecondList()
       })
+      CommentApi.getComments()
     })
+
   }
   
   static createUser(e) {
@@ -36,7 +38,7 @@ class UserApi {
       const i = new User({id: newUser.id, name: newUser.attributes.name})
       // i.attachToDom()
       i.addList()
-      i.addSecondList()
+      // i.addSecondList()
     })
   }
 

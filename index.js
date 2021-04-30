@@ -20,6 +20,7 @@ const finalScore = document.getElementById('user-score')
 const score = document.getElementById('score')
 const scoreForm = document.getElementById("score-form") 
 let scoreCount = document.getElementById("score-count")
+let scoreDiv = document.getElementById('score-div')
 
 
 //Save Btn
@@ -93,6 +94,15 @@ function handleSave(e) {
   // const topDiv = document.getElementsByClassName('grid-container')
   // const arrayDiv = Array.from(topDiv)
   // arrayDiv.map( e => e.remove() )
+
+  const pick = document.getElementById("number")
+  pick.remove()
+  que.remove()
+  reset.remove()
+  answerForm.remove()
+
+  const hi = document.getElementById('category-title')
+  hi.remove()
   const userForm = document.getElementById('make-user')
   userForm.classList.remove('hidden')
   userForm.classList.add('visible')
@@ -113,6 +123,8 @@ function handleReset(e) {
   const pTags = categoryRemove.children  
   const pTag = Array.from(pTags) 
   pTag[0].remove()
+
+ 
 
   const rightAnswer = document.getElementById('right-answer')
   rightAnswer.id = ""
@@ -140,6 +152,10 @@ start_button.addEventListener('click', e => {
   const save = document.getElementById('save') 
   save.classList.remove('hidden')
   save.classList.add('visible')
+
+  scoreDiv.classList.remove('hidden')
+  scoreDiv.classList.add('item5')
+  scoreDiv.classList.add('visible')
 
   const form = document.getElementById('number')
   form.classList.add('visible')
@@ -193,5 +209,5 @@ answerForm.addEventListener('submit', e => {
 })
 
 
-// UserApi.getUsers()
-CommentApi.getComments()
+UserApi.getUsers()
+// CommentApi.getComments()

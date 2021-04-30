@@ -51,6 +51,15 @@ addSecondList(){
   secondDropdown.append(option)
 }
 
+  
+static findById(userId){
+    return User.all.find( e => {
+      return parseInt(e.id) === userId
+    })
+  }
+
 
 }
+
+
 
