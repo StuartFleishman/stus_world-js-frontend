@@ -36,9 +36,7 @@ class UserApi {
     .then(user => {
       const newUser = user.data
       const i = new User({id: newUser.id, name: newUser.attributes.name})
-      // i.attachToDom()
       i.addList()
-      // i.addSecondList()
     })
   }
 

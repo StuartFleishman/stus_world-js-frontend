@@ -15,8 +15,7 @@ class Comment {
 
   render() {
 
-    this.element.innerHTML = 
-    `
+    this.element.innerHTML = `
       <div>${Comment.obj.name}
       <h6>Wrote</h6>
       <strong>"${this.text}"</strong>
