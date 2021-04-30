@@ -6,7 +6,7 @@ class Comment {
   constructor({text, user_id}) {
     this.text = text 
     this.user_id = user_id 
-    this.element = document.createElement('li')
+    this.element = document.createElement('div')
     Comment.all.push(this)
     
     
@@ -20,7 +20,8 @@ class Comment {
     this.element.innerHTML = 
     `
       <div>${Comment.obj.name}
-      <strong class="name" id="${this.user_id}">${this.text}</strong>
+      <h6>Wrote</h6>
+      <strong>"${this.text}"</strong>
       </div> 
     `
     return this.element
