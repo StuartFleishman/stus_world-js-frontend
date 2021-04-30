@@ -96,3 +96,8 @@ padding-right: .6em;
   padding: 10px;
   text-align: center;
 }
+
+.btn {
+  color: white;
+  background-color: blue;
+}

@@ -125,8 +125,10 @@ function handleReset(e) {
   const pTag = Array.from(pTags) 
   pTag[0].remove()
 
-  let wrong = document.getElementById('unlucky')
-  wrong.remove()
+  debugger
+
+  const hi = document.getElementById('question-title')
+  hi.firstElementChild.remove()
 
  
 

@@ -37,7 +37,7 @@ function addError() {
   const dGrid = document.getElementById("div-grid")
   const div= document.createElement('div')
   div.classList.add('item2')
-  div.innerText = "Unlucky Number, Roll Again!"
+  div.innerText = "1 Free Point!"
   div.id = "unlucky"
 
   setTimeout( function() { div.remove() }, 2000)
