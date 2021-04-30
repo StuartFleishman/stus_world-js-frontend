@@ -39,6 +39,9 @@ function addError() {
   div.classList.add('item2')
   div.innerText = "Unlucky Number, Roll Again!"
   div.id = "unlucky"
+
+  setTimeout( function() { div.remove() }, 2000)
+
   dGrid.appendChild(div)
   const categoryRemove = document.getElementById('category-title')
   const pTags = categoryRemove.children  

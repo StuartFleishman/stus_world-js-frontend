@@ -120,9 +120,13 @@ function handleReset(e) {
   const bttn = document.getElementById('reset')
   bttn.innerText = ""
   const categoryRemove = document.getElementById('category-title')
+ 
   const pTags = categoryRemove.children  
   const pTag = Array.from(pTags) 
   pTag[0].remove()
+
+  let wrong = document.getElementById('unlucky')
+  wrong.remove()
 
  
 
@@ -157,8 +161,11 @@ start_button.addEventListener('click', e => {
   scoreDiv.classList.add('item5')
   scoreDiv.classList.add('visible')
 
-  const form = document.getElementById('number')
-  form.classList.add('visible')
+  
+  numForm.classList.add('visible')
+  numForm.classList.add('center')
+  numForm.classList.add('item3')
+ 
   start_button.classList.add('hidden')
 
 })
@@ -176,6 +183,7 @@ numForm.addEventListener('submit', e => {
   answerForm.classList.add('item2')
   
   const cat = document.getElementById('category-title')
+  cat.innerText = "Category"
   const reset = document.getElementById('reset')
   reset.classList.add('visible')
   reset.innerText = "Reset"
@@ -203,11 +211,15 @@ answerForm.addEventListener('submit', e => {
     return scoreCount.innerText = newScore
   }
   else {
-    console.log('not working')
+    const right = document.getElementById('right-answer') 
+    right.classList.add('visible')
+    right.parentElement.firstElementChild.remove()
+
+    answerForm.reset()
+ 
   }
   answerForm.reset()
 })
 
 
 UserApi.getUsers()
-// CommentApi.getComments()
