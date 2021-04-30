@@ -36,21 +36,17 @@ const reset = document.getElementById('reset')
 //Start BTN
 const start_button = document.getElementById('start')
 
-//Right & Wrong Btns(not using )
-const wrong = document.getElementById('wrong')
-const right = document.getElementById('right')
 
 //Pick a number between 1-1560
 const numForm = document.getElementById('number')
 
-const h1 = document.getElementById('cat')
+// const h1 = document.getElementById('cat')
 
-const inputValue = document.getElementById('a')
+// const inputValue = document.getElementById('a')
 
 
 //Check User Answer
 let answerForm = document.getElementById('answer-form')
-const answerArray = []
 
 
 //EVENT LISTENERS USERS
@@ -124,8 +120,6 @@ function handleReset(e) {
   const pTags = categoryRemove.children  
   const pTag = Array.from(pTags) 
   pTag[0].remove()
-
-  debugger
 
   const hi = document.getElementById('question-title')
   hi.firstElementChild.remove()
@@ -223,5 +217,32 @@ answerForm.addEventListener('submit', e => {
   answerForm.reset()
 })
 
+function addError() {
+  const dGrid = document.getElementById("div-grid")
+  const div= document.createElement('div')
+  div.classList.add('item2')
+  div.innerText = "1 Free Point!"
+  div.id = "unlucky"
+
+  setTimeout( function() { div.remove() }, 2000)
+
+  dGrid.appendChild(div)
+  const categoryRemove = document.getElementById('category-title')
+  const pTags = categoryRemove.children  
+  const pTag = Array.from(pTags) 
+  pTag[0].remove()
+  const ct = document.getElementById('category-title')
+  ct.innerText = ""
+  addScore()
+}
+
+
+function addScore() {
+  let sCount = document.getElementById("score-count")
+  let newestScore = sCount.innerText
+  let currentScore = parseInt(newestScore)
+  let finalScore = currentScore += 1
+  return sCount.innerText = finalScore
+}
 
 UserApi.getUsers()

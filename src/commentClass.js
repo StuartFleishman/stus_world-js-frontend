@@ -14,9 +14,7 @@ class Comment {
   }
 
   render() {
-    // let obj = {}
-    // obj = User.findById(this.user_id)
-    // let hi = obj.name
+
     this.element.innerHTML = 
     `
       <div>${Comment.obj.name}
