@@ -1,4 +1,4 @@
-Project Title
+Stu's World 
 Trivia App using jService Api
 
 Prerequisites
