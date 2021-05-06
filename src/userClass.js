@@ -2,25 +2,24 @@ class User {
 
   static all = []
 
-  constructor({id, name, game_score}) {
+  constructor({id, name}) {
     this.id = id
     this.name = name 
-    this.game_score = game_score
     this.element = document.createElement('li')
 
 
     User.all.push(this)
   }
 
-  renderUser() {
-    this.element.innerHTML = `
-      <div data-set=${this.id}> 
-      <strong class="name">${this.name}</strong><span>
-      </div> 
-    `
+  // renderUser() {
+  //   this.element.innerHTML = `
+  //     <div data-set=${this.id}> 
+  //     <strong class="name">${this.name}</strong><span>
+  //     </div> 
+  //   `
 
-    return this.element
-  }
+  //   return this.element
+  // }
 
 
   addList(){

@@ -1,20 +1,19 @@
 
-// User Stuff 
+
 const ul = document.getElementById('users')
 const userForm = document.getElementById('user-form')
 const dropdown = document.getElementById('user-dropdown')
 const userInput = document.getElementById("user-name")
 const secondDropdown = document.getElementById('score-dropdown')
 
-//question
 const que = document.getElementById('question-title')
 
 
-// Comment Stuff 
+
 const ulComments = document.getElementById('comments')
 const commentsForm = document.getElementById('comment-form')
 
-//Score Stuff
+
 const ulScores = document.getElementById('scores')
 const finalScore = document.getElementById('user-score')
 const score = document.getElementById('score')
@@ -23,28 +22,24 @@ let scoreCount = document.getElementById("score-count")
 let scoreDiv = document.getElementById('score-div')
 
 
-//Save Btn
+
 const save = document.getElementById('save') 
 
-//Choose Number
+
 const pickNumber = document.getElementById('Pick a Number')
 
 
-//Rest BTN
+
 const reset = document.getElementById('reset')
 
-//Start BTN
+
 const start_button = document.getElementById('start')
 
 
-//Pick a number between 1-1560
 const numForm = document.getElementById('number')
 
-//Check User Answer
 let answerForm = document.getElementById('answer-form')
 
-
-//EVENT LISTENERS USERS
 userForm.addEventListener('submit', handleFormSubmit)
 
 function handleFormSubmit(e) {
@@ -56,7 +51,6 @@ function handleFormSubmit(e) {
   userForm.innerText = "thanks for playing"
 }
 
-//COMMENT LISTENER
 commentsForm.addEventListener('submit', handleCommentSubmit)
 
 function handleCommentSubmit(e) {
@@ -67,7 +61,6 @@ function handleCommentSubmit(e) {
   commentsForm.reset()
   }
 
-//SAVE STUFF
 save.addEventListener('click', handleSave)
 
 function handleSave(e) {
@@ -86,14 +79,9 @@ function handleSave(e) {
   const userForm = document.getElementById('make-user')
   userForm.classList.remove('hidden')
   userForm.classList.add('visible')
-  // const newDiv = document.createElement('div')
-  // newDiv.id = "new-div"
-  // document.body.append(newDiv)
-  
-
 }
 
-//RESET BTN EVENT
+
 reset.addEventListener('click', handleReset)
 function handleReset(e) {
   e.preventDefault()
@@ -117,23 +105,11 @@ function handleReset(e) {
 
   que.innerText = ""
   
-
-
-
- 
-  
-
-
-  // const moo = document.getElementById('hello')
-  // moo.remove()
-  // to.children[1].remove()
 }
 
 
-//START BTN 
 start_button.addEventListener('click', e => {
-  e.preventDefault()
-  const save = document.getElementById('save') 
+
   save.classList.remove('hidden')
   save.classList.add('visible')
 
@@ -150,7 +126,7 @@ start_button.addEventListener('click', e => {
 
 })
 
-//pick a number between 1-1560
+
 numForm.addEventListener('submit', e => {
   e.preventDefault()
 
@@ -174,7 +150,7 @@ numForm.addEventListener('submit', e => {
   numForm.reset()
 })
 
-//check user answer 
+
 answerForm.addEventListener('submit', e => {
   e.preventDefault()
   
@@ -198,7 +174,7 @@ answerForm.addEventListener('submit', e => {
     answerForm.reset()
  
   }
-  answerForm.reset()
+ 
 })
 
 function addError() {
@@ -227,6 +203,13 @@ function addScore() {
   let currentScore = parseInt(newestScore)
   let finalScore = currentScore += 1
   return sCount.innerText = finalScore
+}
+
+function addTitle(title) {
+  const p = document.createElement('p')
+  p.innerText= title 
+  const category = document.getElementById('category-title')
+  category.appendChild(p)
 }
 
 UserApi.getUsers()
