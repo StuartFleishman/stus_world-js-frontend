@@ -10,8 +10,8 @@ class TriviaApi {
         
           const spliceData = data.clues.splice(0,1)
             spliceData.map(trivia => {
-              if(trivia.question == "[audio]") {
-                addError()
+              if(trivia.question == "[audio]" || trivia.question == "") {
+                addFreePoint()
               }
               else {
                 const i = new Trivia({question: trivia.question, id: trivia.id, answer: trivia.answer})

@@ -8,7 +8,7 @@ const secondDropdown = document.getElementById('score-dropdown')
 
 const que = document.getElementById('question-title')
 
-
+const category = document.getElementById('category-title')
 
 const ulComments = document.getElementById('comments')
 const commentsForm = document.getElementById('comment-form')
@@ -33,7 +33,7 @@ const pickNumber = document.getElementById('Pick a Number')
 const reset = document.getElementById('reset')
 
 
-const start_button = document.getElementById('start')
+const start_div = document.getElementById('start')
 
 
 const numForm = document.getElementById('number')
@@ -63,8 +63,7 @@ function handleCommentSubmit(e) {
 
 save.addEventListener('click', handleSave)
 
-function handleSave(e) {
-  e.preventDefault()
+function handleSave() {
   save.innerText = ""
 
 
@@ -83,32 +82,28 @@ function handleSave(e) {
 
 
 reset.addEventListener('click', handleReset)
-function handleReset(e) {
-  e.preventDefault()
-  const bttn = document.getElementById('reset')
-  bttn.innerText = ""
+
+function handleReset() {
+ 
+  reset.innerText = ""
+  
   const categoryRemove = document.getElementById('category-title')
  
   const pTags = categoryRemove.children  
   const pTag = Array.from(pTags) 
   pTag[0].remove()
 
-  const hi = document.getElementById('question-title')
-  hi.firstElementChild.remove()
-
- 
+  que.firstElementChild.remove()
+  que.innerText = ""
 
   const rightAnswer = document.getElementById('right-answer')
   rightAnswer.id = ""
   rightAnswer.innerText = ""
   
-
-  que.innerText = ""
-  
 }
 
 
-start_button.addEventListener('click', e => {
+start_div.addEventListener('click', e => {
 
   save.classList.remove('hidden')
   save.classList.add('visible')
@@ -122,7 +117,7 @@ start_button.addEventListener('click', e => {
   numForm.classList.add('center')
   numForm.classList.add('item3')
  
-  start_button.classList.add('hidden')
+  start_div.classList.add('hidden')
 
 })
 
@@ -177,22 +172,22 @@ answerForm.addEventListener('submit', e => {
  
 })
 
-function addError() {
+function addFreePoint() {
   const dGrid = document.getElementById("div-grid")
   const div= document.createElement('div')
   div.classList.add('item2')
   div.innerText = "1 Free Point!"
   div.id = "unlucky"
 
-  setTimeout( function() { div.remove() }, 2000)
+  setTimeout( () =>  div.remove() , 2000)
 
   dGrid.appendChild(div)
-  const categoryRemove = document.getElementById('category-title')
-  const pTags = categoryRemove.children  
+
+  const pTags = category.children  
   const pTag = Array.from(pTags) 
   pTag[0].remove()
-  const ct = document.getElementById('category-title')
-  ct.innerText = ""
+ 
+  category.innerText = ""
   addScore()
 }
 
@@ -208,7 +203,6 @@ function addScore() {
 function addTitle(title) {
   const p = document.createElement('p')
   p.innerText= title 
-  const category = document.getElementById('category-title')
   category.appendChild(p)
 }
 
