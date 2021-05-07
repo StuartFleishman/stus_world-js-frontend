@@ -2,10 +2,11 @@ class Trivia {
 
   static all = []
 
-  constructor({question, id, answer}) {
+  constructor({question, id, answer, title}) {
     this.question = question
     this.id = id
     this.answer = answer
+    this.title = title
 
 
     this.element = document.createElement('div')
@@ -21,7 +22,6 @@ class Trivia {
 
     return this.element
   }
-
 
   addDom() {
     que.appendChild(this.render())

@@ -14,21 +14,12 @@ const ulComments = document.getElementById('comments')
 const commentsForm = document.getElementById('comment-form')
 
 
-const ulScores = document.getElementById('scores')
-const finalScore = document.getElementById('user-score')
-const score = document.getElementById('score')
-const scoreForm = document.getElementById("score-form") 
 let scoreCount = document.getElementById("score-count")
 let scoreDiv = document.getElementById('score-div')
 
-
-
 const save = document.getElementById('save') 
 
-
 const pickNumber = document.getElementById('Pick a Number')
-
-
 
 const reset = document.getElementById('reset')
 
@@ -65,8 +56,6 @@ save.addEventListener('click', handleSave)
 
 function handleSave() {
   save.innerText = ""
-
-
  
   numForm.remove()
   que.remove()
@@ -75,9 +64,9 @@ function handleSave() {
 
   const catTitle = document.getElementById('category-title')
   catTitle.remove()
-  const userForm = document.getElementById('make-user')
-  userForm.classList.remove('hidden')
-  userForm.classList.add('visible')
+  const userDiv = document.getElementById('make-user')
+  userDiv.classList.remove('hidden')
+  userDiv.classList.add('visible')
 }
 
 
@@ -126,6 +115,7 @@ numForm.addEventListener('submit', e => {
   e.preventDefault()
 
   const catNum = (parseInt(e.target.children[1].value))
+  
   TriviaApi.getCategories(catNum)
 
   que.classList.add('visible')
@@ -139,7 +129,7 @@ numForm.addEventListener('submit', e => {
   reset.classList.add('visible')
   reset.innerText = "Reset"
   cat.classList.add('visible')
-  const userNumber = document.getElementById('user-number')
+ 
   numForm.classList.remove('visible')
   numForm.classList.add('hidden')
   numForm.reset()
@@ -155,19 +145,14 @@ answerForm.addEventListener('submit', e => {
   const userValueUp = userValue.toUpperCase()
  
   if (rightAnswerCaps === userValueUp.trim()) {
-    let scoreCount = document.getElementById("score-count")
-    let currentScore = parseInt(scoreCount.innerText)
-    let newScore = currentScore += 1
+    addScore()
     answerForm.reset()
-    return scoreCount.innerText = newScore
   }
   else {
     const right = document.getElementById('right-answer') 
     right.classList.add('visible')
     right.parentElement.firstElementChild.remove()
-
     answerForm.reset()
- 
   }
  
 })
@@ -193,11 +178,10 @@ function addFreePoint() {
 
 
 function addScore() {
-  let sCount = document.getElementById("score-count")
-  let newestScore = sCount.innerText
+  let newestScore = scoreCount.innerText
   let currentScore = parseInt(newestScore)
   let finalScore = currentScore += 1
-  return sCount.innerText = finalScore
+  return scoreCount.innerText = finalScore
 }
 
 function addTitle(title) {
