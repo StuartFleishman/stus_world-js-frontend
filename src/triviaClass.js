@@ -18,10 +18,19 @@ class Trivia {
     this.element.innerHTML = `
       <p>${this.question}</p>
       <p id="right-answer" class="hidden">${this.answer}</p>
+      <br>
+      <h5>Category</h5>
+      <h6>${this.title}</h6>
     `
 
     return this.element
   }
+
+  // addTitle() {
+  //   const p = document.createElement('p')
+  //   p.innerText= `${this.title}` 
+  //   category.appendChild(p)
+  // }
 
   addDom() {
     que.appendChild(this.render())

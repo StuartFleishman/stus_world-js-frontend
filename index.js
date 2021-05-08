@@ -35,10 +35,17 @@ userForm.addEventListener('submit', handleFormSubmit)
 
 function handleFormSubmit(e) {
   e.preventDefault()
+  // const commentForm = document.getElementById('comment-form')
+  // commentForm.classList.remove('hidden')
+  // commentForm.classList.add('visible')
+  UserApi.createUser(e)
+  // userForm.innerText = "thanks for playing"
+}
+
+function removeHidden() {
   const commentForm = document.getElementById('comment-form')
   commentForm.classList.remove('hidden')
   commentForm.classList.add('visible')
-  UserApi.createUser(e)
   userForm.innerText = "thanks for playing"
 }
 
@@ -49,6 +56,7 @@ function handleCommentSubmit(e) {
   ulComments.classList.remove('hidden')
   ulComments.classList.add('visible')
   CommentApi.createComment(e)
+  User.addComments()
   commentsForm.reset()
   }
 
@@ -56,6 +64,10 @@ save.addEventListener('click', handleSave)
 
 function handleSave() {
   save.innerText = ""
+
+  // const commentForm = document.getElementById('comment-form')
+  // commentForm.classList.remove('hidden')
+  // commentForm.classList.add('visible')
  
   numForm.remove()
   que.remove()
@@ -76,11 +88,12 @@ function handleReset() {
  
   reset.innerText = ""
   
-  const categoryRemove = document.getElementById('category-title')
+  // const categoryRemove = document.getElementById('category-title')
  
-  const pTags = categoryRemove.children  
-  const pTag = Array.from(pTags) 
-  pTag[0].remove()
+  // const pTags = categoryRemove.children  
+  // const pTag = Array.from(pTags) 
+  // pTag[0].remove()
+
 
   que.firstElementChild.remove()
   que.innerText = ""
@@ -92,7 +105,7 @@ function handleReset() {
 }
 
 
-start_div.addEventListener('click', e => {
+start_div.addEventListener('click', () => {
 
   save.classList.remove('hidden')
   save.classList.add('visible')
@@ -124,7 +137,7 @@ numForm.addEventListener('submit', e => {
   answerForm.classList.add('item2')
   
   const cat = document.getElementById('category-title')
-  cat.innerText = "Category"
+  cat.innerText = "TRIVIA!"
   const reset = document.getElementById('reset')
   reset.classList.add('visible')
   reset.innerText = "Reset"
@@ -168,11 +181,11 @@ function addFreePoint() {
 
   dGrid.appendChild(div)
 
-  const pTags = category.children  
-  const pTag = Array.from(pTags) 
-  pTag[0].remove()
+  // const pTags = category.children  
+  // const pTag = Array.from(pTags) 
+  // pTag[0].remove()
  
-  category.innerText = ""
+  // category.innerText = ""
   addScore()
 }
 
@@ -184,10 +197,11 @@ function addScore() {
   return scoreCount.innerText = finalScore
 }
 
-function addTitle(title) {
-  const p = document.createElement('p')
-  p.innerText= title 
-  category.appendChild(p)
-}
+// function addTitle(title) {
+//   const p = document.createElement('p')
+//   p.innerText= title 
+//   category.appendChild(p)
+// }
 
 UserApi.getUsers()
+

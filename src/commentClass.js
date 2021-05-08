@@ -6,7 +6,7 @@ class Comment {
   constructor({text, user_id}) {
     this.text = text 
     this.user_id = user_id 
-    this.element = document.createElement('div')
+    this.element = document.createElement('li')
     Comment.all.push(this)
     
     
@@ -16,15 +16,19 @@ class Comment {
   render() {
 
     this.element.innerHTML = `
-      <div>${Comment.obj.name}
-      <h6>Wrote</h6>
-      <strong>"${this.text}"</strong>
-      </div> 
+      <h4>
+      <strong>${this.text}</strong>
+      </h4> 
     `
     return this.element
   }
 
   addToDom() {
+    ulComments.appendChild(this.render())
+  }
+
+  addToUc() {
+    const h2 = document.getElementById('comment-list')
     ulComments.appendChild(this.render())
   }
 

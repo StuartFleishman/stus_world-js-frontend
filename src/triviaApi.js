@@ -6,7 +6,7 @@ class TriviaApi {
     .then(resp => resp.json())
       .then(data => {
           const title = data.title
-          addTitle(title)
+          // addTitle(title)
         
           const spliceData = data.clues.splice(0,1)
             spliceData.map(trivia => {
@@ -14,7 +14,7 @@ class TriviaApi {
                 addFreePoint()
               }
               else {
-                const t = new Trivia({question: trivia.question, id: trivia.id, answer: trivia.answer})
+                const t = new Trivia({question: trivia.question, id: trivia.id, answer: trivia.answer, title: title})
                 t.addDom()
               }
             })

@@ -8,7 +8,7 @@ class CommentApi {
     .then(json => {
       json.data.forEach(comment => {
         const c = new Comment({text: comment.attributes.text, user_id: comment.attributes.user_id})
-        c.addToDom()
+        // c.addToDom()
       })
     })
   }
@@ -33,7 +33,8 @@ class CommentApi {
     .then(json => {
       const newComment = json.data
       const c = new Comment({text: newComment.attributes.text, user_id: newComment.attributes.user_id})
-      c.addToDom()
+      // c.addToDom()
+      c.addToUc()
     })
   }
 

@@ -32,9 +32,21 @@ class UserApi {
     fetch(this.baseURL, configObj)
     .then(resp => resp.json())
     .then(user => {
-      const newUser = user.data
-      const i = new User({id: newUser.id, name: newUser.attributes.name})
-      i.addList()
+      
+      let userId = user.data.id 
+      if (userId === null){
+        window.alert("name can't be blank")
+      }
+      else if(User.all.find(e => e.id === userId)){
+        window.alert("Name already exists, select from dropdown")
+        removeHidden()
+      }
+      else {
+        const i = new User({id: userId, name: user.data.attributes.name})
+        i.addList()
+        window.alert("Name created, select from dropdown")
+        removeHidden()
+      }
     })
   }
 
