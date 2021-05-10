@@ -11,22 +11,46 @@ class User {
     User.all.push(this)
   }
 
-  static comments() {
-    return Comment.all.filter( e => e.user_id === parseInt(dropdown.value))
+  comments() {
+    return Comment.all.filter( com => com.userId === parseInt(this.id))
   }
+
+  // renderComment(text) {
+  //   ulComments.innerHTML = `
+  //   <h3> ${text} </h3>
+  //   `
+  // }
+
+ renderC() {
+  const commentArray = this.comments()
+
+    commentArray.forEach(comment => {
+      const li = document.createElement('li')
+      li.id = this.id 
+      li.innerHTML = `
+      <h4> ${comment.text} </h4>
+      `
+      ulComments.append(li)
+    })
+   }
+
 
   static addComments(){
     const h2 = document.getElementById('comment-list')
     const u = User.all.find( u => parseInt(u.id) === parseInt(dropdown.value))
     ulComments.innerText = `${u.name}`
-    const userComments = User.comments()
+    const userComments = this.comments()
     userComments.map(comment => {
       const li = document.createElement('li')
       li.innerHTML = `
-      <h4> ${comment.text}
+      <h4> ${comment.text} </h4>
       `
       ulComments.append(li)
     })
+  }
+
+  addToC() {
+    ulComments.append(this.comments())
   }
 
 
@@ -36,6 +60,8 @@ class User {
     option.innerText = this.name
     dropdown.append(option)
   }
+
+
 
   
   static findById(userId){

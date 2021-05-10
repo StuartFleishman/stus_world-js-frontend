@@ -1,16 +1,14 @@
 class Comment {
 
   static all = []
-  static obj = {}
+
 
   constructor({text, user_id}) {
     this.text = text 
-    this.user_id = user_id 
+    this.userId = user_id 
     this.element = document.createElement('li')
     Comment.all.push(this)
     
-    
-    Comment.obj = {...User.findById(user_id)}
   }
 
   render() {
@@ -31,6 +29,18 @@ class Comment {
     const h2 = document.getElementById('comment-list')
     ulComments.appendChild(this.render())
   }
+
+  // static renderFiltered(userArray) {
+  //   debugger
+  //   userArray.forEach(user => {
+  //     const li = document.createElement('li')
+  //     li.innerHTML = `
+  //     <h1> ${this.name} </h1>
+  //     <h4> ${user.text} </h4>
+  //     `
+  //     ulComments.append(li)
+  //   })
+  // }
 
 
 }

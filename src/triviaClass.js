@@ -17,6 +17,7 @@ class Trivia {
   render() {
     this.element.innerHTML = `
       <p>${this.question}</p>
+      <p id="answer" class="hidden"> The right answer is </p>
       <p id="right-answer" class="hidden">${this.answer}</p>
       <br>
       <h5>Category</h5>
